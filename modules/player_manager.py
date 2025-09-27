@@ -1,18 +1,54 @@
 # modules/player_manager.py
 
-import uuid
-import json
 import os
+import uuid
+import pymongo
+from pymongo.errors import ConnectionFailure
+import json
 import re as _re
 import unicodedata
 import time
 from typing import Optional, Tuple, Iterator
 from datetime import datetime, timedelta, timezone
-from threading import Lock
 from modules import clan_manager
 import logging
 
 
+# ========================================
+# CONFIGURAÇÃO E CONEXÃO COM MONGODB
+# ========================================
+
+MONGO_CONNECTION_STRING = os.environ.get("MONGO_CONNECTION_STRING")
+players_collection = None # A nossa "coleção" de jogadores
+
+if not MONGO_CONNECTION_STRING:
+    logging.error("CRÍTICO: A variável de ambiente MONGO_CONNECTION_STRING não foi definida!")
+else:
+    try:
+        client = pymongo.MongoClient(MONGO_CONNECTION_STRING)
+        client.admin.command('ping')
+        logging.info("✅ Conexão com o MongoDB Atlas estabelecida com sucesso!")
+        
+        db = client.get_database("eldora_db")
+        players_collection = db.get_collection("players")
+
+        # NOVO: Criar índices para otimizar as buscas por nome e username.
+        # Isso torna as buscas extremamente rápidas!
+        logging.info("Garantindo a existência de índices no MongoDB...")
+        players_collection.create_index("character_name_normalized")
+        # Você pode adicionar mais índices se buscar por outros campos frequentemente
+        # players_collection.create_index("username") 
+        logging.info("✅ Índices do MongoDB verificados/criados.")
+
+    except ConnectionFailure as e:
+        logging.error(f"CRÍTICO: Falha ao conectar ao MongoDB Atlas: {e}")
+    except Exception as e:
+        logging.error(f"CRÍTICO: Ocorreu um erro inesperado na configuração do MongoDB: {e}")
+
+
+# ========================================
+# DADOS E CONSTANTES DO JOGO
+# ========================================
 try:
     from modules.game_data import PREMIUM_TIERS, ITEMS_DATA 
 except Exception:
@@ -23,17 +59,12 @@ except Exception:
         ITEMS_DATA = {}
 
 
-PLAYERS_DIR = "players"
 GOLD_KEY = "ouro"
-GEMS_KEY_PT = "gemas"  
+GEMS_KEY_PT = "gemas"   
 GEMS_KEY_EN = "gems"
 GEM_KEYS = {GEMS_KEY_PT, GEMS_KEY_EN}
 DEFAULT_PVP_ENTRIES = 10 
 
-_IO_LOCK = Lock()
-
-_player_cache = {}
-logging.info("[CACHE] O cache de jogadores foi inicializado.")
 
 CLASS_PROGRESSIONS = {
     "guerreiro": {
@@ -83,9 +114,6 @@ CLASS_PROGRESSIONS = {
     },
 }
 
-# =========================
-# GANHO POR PONTO (por classe)
-# =========================
 CLASS_POINT_GAINS = {
     "guerreiro": {"max_hp": 4, "attack": 1, "defense": 2, "initiative": 1, "luck": 1},
     "berserker": {"max_hp": 3, "attack": 2, "defense": 1, "initiative": 1, "luck": 1},
@@ -101,12 +129,15 @@ CLASS_POINT_GAINS = {
 _BASELINE_KEYS = ("max_hp", "attack", "defense", "initiative", "luck")
 
 
-def _ensure_dir_exists():
-    os.makedirs(PLAYERS_DIR, exist_ok=True)
+# ========================================
+# CACHE DE JOGADORES (Ainda útil para evitar múltiplas buscas no DB)
+# ========================================
+_player_cache = {}
 
-def _player_file_path(user_id) -> str:
-    return os.path.join(PLAYERS_DIR, f"{user_id}.json")
 
+# ========================================
+# FUNÇÕES AUXILIARES
+# ========================================
 def _parse_iso(dt_str: str) -> Optional[datetime]:
     if not dt_str:
         return None
@@ -128,32 +159,100 @@ def _ival(x, default=0):
         return int(default)
 
 # ========================================
-# LEITURA E ESCRITA (MODIFICADO COM CACHE)
+# LEITURA E ESCRITA (MODIFICADO PARA MONGODB)
 # ========================================
 
-def _load_player_json(user_id: int) -> Optional[dict]:
-    """Função base que lê o ficheiro JSON do disco."""
-    _ensure_dir_exists()
-    path = _player_file_path(user_id)
-    if not os.path.exists(path):
+def _load_player_from_db(user_id: int) -> Optional[dict]:
+    """NOVO: Função base que lê os dados do jogador do MongoDB."""
+    if not players_collection:
+        logging.error("Tentativa de carregar jogador, mas a conexão com o MongoDB não está disponível.")
         return None
-    try:
-        with _IO_LOCK, open(path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception:
+    
+    player_doc = players_collection.find_one({"_id": user_id})
+    if player_doc:
+        player_doc.pop('_id', None) # Remove o campo _id para compatibilidade interna
+    return player_doc
+
+def save_player_data(user_id: int, player_info: dict) -> None:
+    """ALTERADO: Salva os dados do jogador no MongoDB."""
+    if not players_collection:
+        logging.error(f"Tentativa de salvar jogador {user_id}, mas a conexão com o MongoDB não está disponível.")
+        return
+
+    # Remove o _id do dicionário se ele existir, para não causar conflitos
+    player_info.pop('_id', None)
+    
+    # Atualiza o cache com uma cópia limpa
+    _player_cache[user_id] = player_info.copy()
+
+    # Prepara os dados para salvar (limpeza, etc.)
+    _sanitize_and_migrate_gold(player_info)
+    player_info["gold"] = max(0, _ival(player_info.get("gold")))
+    player_info["energy"] = max(0, _ival(player_info.get("energy")))
+    cap = get_player_max_energy(player_info)
+    if player_info["energy"] > cap: player_info["energy"] = cap
+    if not player_info.get('energy_last_ts'):
+        anchor = _parse_iso(player_info.get('last_energy_ts')) or utcnow()
+        player_info['energy_last_ts'] = anchor.isoformat()
+    if player_info.get('last_energy_ts'): player_info.pop('last_energy_ts', None)
+    
+    # Adiciona campo normalizado para busca rápida com índice
+    player_info["character_name_normalized"] = _normalize_char_name(player_info.get("character_name", ""))
+    
+    # Salva no MongoDB.
+    # replace_one: Substitui o documento inteiro.
+    # {"_id": user_id}: O filtro para encontrar o jogador.
+    # player_info: Os novos dados.
+    # upsert=True: Se o jogador não existir, ele será criado.
+    players_collection.replace_one({"_id": user_id}, player_info, upsert=True)
+
+def get_player_data(user_id) -> Optional[dict]:
+    """
+    Carrega os dados do jogador, usando o cache para a leitura base,
+    mas sempre aplicando as sincronizações importantes (ex: energia).
+    """
+    if user_id in _player_cache:
+        raw_data = _player_cache[user_id].copy()
+    else:
+        raw_data = _load_player_from_db(user_id)
+        if raw_data:
+            _player_cache[user_id] = raw_data.copy()
+            logging.info(f"[CACHE] Jogador {user_id} carregado do DB para o cache.")
+
+    if not raw_data:
         return None
 
+    data = raw_data 
+    data["user_id"] = user_id
+
+    # Funções de sincronização e migração
+    if "inventory" not in data or not isinstance(data.get("inventory"), dict):
+        data["inventory"] = {}
+        
+    _sanitize_and_migrate_gold(data)
+    data["gold"] = max(0, _ival(data.get("gold")))
+    
+    changed_by_energy = _apply_energy_autoregen_inplace(data)
+    mig = _migrate_point_pool_to_stat_points_inplace(data)
+    base_changed = _ensure_base_stats_block_inplace(data)
+    cls_sync = _apply_class_progression_sync_inplace(data)
+    synced = _sync_stat_points_to_level_cap_inplace(data)
+
+    if changed_by_energy or mig or base_changed or cls_sync or synced:
+        save_player_data(user_id, data)
+
+    return data
+
 def get_player_data_light(user_id: int) -> Optional[dict]:
-    """Versão leve que busca dados, agora otimizada com cache."""
-    # <<< CACHE >>> Tenta buscar no cache primeiro.
+    """Versão leve que busca dados, agora otimizada com cache e MongoDB."""
     if user_id in _player_cache:
-        # Retorna uma cópia para evitar modificação acidental do cache
         data = _player_cache[user_id].copy()
     else:
-        data = _load_player_json(user_id)
+        data = _load_player_from_db(user_id)
         if data:
             _player_cache[user_id] = data.copy()
-            logging.info(f"[CACHE] Jogador {user_id} carregado do disco para o cache (leitura leve).")
+            logging.info(f"[CACHE] Jogador {user_id} carregado do DB para o cache (leitura leve).")
+    
     if not data:
         return None
     
@@ -169,33 +268,135 @@ def get_player_data_light(user_id: int) -> Optional[dict]:
         data["energy"] = 0
     return data
 
+# ========================================
+# FUNÇÕES DE ITERAÇÃO E BUSCA (AGORA COM MONGODB)
+# ========================================
+
 def iter_player_ids() -> Iterator[int]:
-    _ensure_dir_exists()
-    for entry in os.scandir(PLAYERS_DIR):
-        if entry.is_file() and entry.name.endswith('.json'):
-            name = entry.name[:-5]
-            if name.isdigit():
-                yield int(name)
+    """ALTERADO: Itera sobre os IDs dos jogadores diretamente do MongoDB."""
+    if not players_collection:
+        return
+    # find({}, {"_id": 1}) busca todos os docs, mas retorna apenas o campo _id. Eficiente!
+    for doc in players_collection.find({}, {"_id": 1}):
+        yield doc["_id"]
 
 def iter_players_paged(batch_size: int = 200, light: bool = True) -> Iterator[Tuple[int, dict]]:
-    buf = []
+    if not players_collection:
+        return
+
     loader = get_player_data_light if light else get_player_data
-    for uid in iter_player_ids():
-        buf.append(uid)
-        if len(buf) >= max(1, int(batch_size)):
-            for _uid in buf:
-                pdata = loader(_uid)
-                if pdata:
-                    yield _uid, pdata
-            buf.clear()
-    if buf:
-        for _uid in buf:
-            pdata = loader(_uid)
-            if pdata:
-                yield _uid, pdata
+    for doc in players_collection.find({}, {"_id": 1}):
+        uid = doc["_id"]
+        pdata = loader(uid)
+        if pdata:
+            yield uid, pdata
+
+def iter_players() -> Iterator[Tuple[int, dict]]:
+    """ALTERADO: Itera sobre todos os dados dos jogadores do MongoDB."""
+    if not players_collection:
+        return
+    for doc in players_collection.find():
+        user_id = doc.pop("_id")
+        full_data = get_player_data(user_id) # Usa get_player_data para aplicar lógicas
+        if full_data:
+            yield user_id, full_data
+
+def _normalize_char_name(_s: str) -> str:
+    if not isinstance(_s, str):
+        return ""
+    INVISIBLE_CHARS = r"[\u200B-\u200D\uFEFF]"
+    s = _re.sub(INVISIBLE_CHARS, "", _s)
+    s = _re.sub(r"[\r\n\t]+", " ", s)
+    s = _re.sub(r"\s+", " ", s).strip().lower()
+    return s
+
+def find_player_by_name(name: str):
+    """ALTERADO: Busca um jogador pelo nome exato usando uma query no MongoDB."""
+    target_normalized = _normalize_char_name(name)
+    if not target_normalized or not players_collection:
+        return None
+    
+    doc = players_collection.find_one({"character_name_normalized": target_normalized})
+    if not doc:
+        return None
+        
+    user_id = doc.pop('_id')
+    return user_id, doc
+
+def find_players_by_name_partial(query: str):
+    def _normalize(s: str) -> str:
+        import unicodedata as _u, re as _r
+        s = (s or "")
+        s = _u.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
+        s = _r.sub(r"\s+", " ", s).strip().lower()
+        return s
+
+    nq = _normalize(query)
+    if not nq or not players_collection:
+        return []
+
+    # A busca com regex é poderosa! "$options": "i" significa case-insensitive
+    cursor = players_collection.find({"character_name_normalized": {"$regex": nq, "$options": "i"}})
+    
+    out = []
+    for doc in cursor:
+        uid = doc.pop("_id")
+        out.append((uid, doc))
+    return out
+
+
+_VS_SET = {0xFE0E, 0xFE0F}
+def _is_skin_tone(cp: int) -> bool:
+    return 0x1F3FB <= cp <= 0x1F3FF
+
+def _strip_vs_and_tones(s: str) -> str:
+    if not isinstance(s, str):
+        return ""
+    s = unicodedata.normalize("NFKC", s)
+    out = []
+    for ch in s:
+        cp = ord(ch)
+        if cp in _VS_SET or _is_skin_tone(cp):
+            continue
+        out.append(ch)
+    return "".join(out).strip()
+
+def _emoji_variants(s: str):
+    base = _strip_vs_and_tones(s)
+    yield base
+    if "\u200D" in base:
+        yield base.replace("\u200D", "")
+
+def find_player_by_name_norm(name: str) -> Optional[Tuple[int, dict]]:
+    # Esta função é complexa e pode ser lenta no MongoDB sem um índice específico.
+    # Por agora, vamos mantê-la iterando, mas idealmente seria substituída por uma busca mais direta.
+    qvars = list(_emoji_variants(name))
+    if not qvars:
+        return None
+    for uid, pdata in iter_players(light=True):
+        pname = (pdata or {}).get("character_name", "")
+        nvars = list(_emoji_variants(pname))
+        if any(qv == nv for qv in qvars for nv in nvars):
+            return uid, pdata
+    return None
+
+def find_by_username(username: str) -> Optional[dict]:
+    u = (username or "").lstrip("@").strip().lower()
+    if not u or not players_collection:
+        return None
+    CAND_KEYS = ("username", "telegram_username", "tg_username")
+    
+    # Usamos o operador $or para procurar em vários campos possíveis
+    # É importante ter um índice em pelo menos um desses campos para ser rápido
+    query = {"$or": [{k: u} for k in CAND_KEYS]}
+    doc = players_collection.find_one(query)
+    
+    if doc:
+        doc.pop("_id", None)
+    return doc
 
 # =========================
-# AUTO-REGEN DE ENERGIA
+# AUTO-REGEN DE ENERGIA (Sem alterações)
 # =========================
 def _get_regen_seconds(player_data: dict) -> int:
     try:
@@ -260,179 +461,6 @@ def _apply_energy_autoregen_inplace(player_data: dict) -> bool:
 
     return changed
 
-# =========================
-# GET/SET
-# =========================
-def get_player_data(user_id) -> Optional[dict]:
-    """
-    Carrega os dados do jogador, usando o cache para a leitura base,
-    mas sempre aplicando as sincronizações importantes (ex: energia).
-    """
-    
-    if user_id in _player_cache:
-        raw_data = _player_cache[user_id].copy()
-    else:
-        raw_data = _load_player_json(user_id)
-        if raw_data:
-            _player_cache[user_id] = raw_data.copy()
-            logging.info(f"[CACHE] Jogador {user_id} carregado do disco para o cache.")
-    
-
-    if not raw_data:
-        return None
-
-    data = raw_data 
-    data["user_id"] = user_id
-
-    # Funções de sincronização e migração (como antes)
-    if "inventory" not in data or not isinstance(data.get("inventory"), dict):
-        data["inventory"] = {}
-        
-    _sanitize_and_migrate_gold(data)
-    data["gold"] = max(0, _ival(data.get("gold")))
-    
-    # A regeneração de energia continua sendo aplicada aqui
-    changed_by_energy = _apply_energy_autoregen_inplace(data)
-    
-    # Outras sincronizações de dados do jogador
-    mig = _migrate_point_pool_to_stat_points_inplace(data)
-    base_changed = _ensure_base_stats_block_inplace(data)
-    cls_sync = _apply_class_progression_sync_inplace(data)
-    synced = _sync_stat_points_to_level_cap_inplace(data)
-
-    # A condição 'if' foi simplificada, removendo a variável 'action_finalized'
-    if changed_by_energy or mig or base_changed or cls_sync or synced:
-        save_player_data(user_id, data)
-
-    return data
-
-def save_player_data(user_id, player_info: dict) -> None:
-    _ensure_dir_exists()
-    _player_cache[user_id] = player_info.copy()
-    _sanitize_and_migrate_gold(player_info)
-
-    player_info["gold"] = max(0, _ival(player_info.get("gold")))
-    player_info["energy"] = max(0, _ival(player_info.get("energy")))
-
-    cap = get_player_max_energy(player_info)
-    if player_info["energy"] > cap:
-        player_info["energy"] = cap
-
-    if not player_info.get('energy_last_ts'):
-        anchor = _parse_iso(player_info.get('last_energy_ts')) or utcnow()
-        player_info['energy_last_ts'] = anchor.isoformat()
-    if player_info.get('last_energy_ts'):
-        player_info.pop('last_energy_ts', None)
-
-    dst = _player_file_path(user_id)
-    tmp = dst + ".tmp"
-    data = json.dumps(player_info, indent=4, ensure_ascii=False)
-    with _IO_LOCK:
-        with open(tmp, 'w', encoding='utf-8') as f:
-            f.write(data)
-        os.replace(tmp, dst)
-
-def iter_players() -> Iterator[Tuple[int, dict]]:
-    _ensure_dir_exists()
-    for filename in os.listdir(PLAYERS_DIR):
-        if not filename.endswith('.json'):
-            continue
-        try:
-            user_id = int(filename.split('.')[0])
-        except Exception:
-            continue
-        
-        data = get_player_data(user_id)
-        if data:
-            yield user_id, data
-
-# === Busca por nome (match exato normalizado) ===
-def _normalize_char_name(_s: str) -> str:
-    if not isinstance(_s, str):
-        return ""
-    INVISIBLE_CHARS = r"[\u200B-\u200D\uFEFF]"
-    s = _re.sub(INVISIBLE_CHARS, "", _s)
-    s = _re.sub(r"[\r\n\t]+", " ", s)
-    s = _re.sub(r"\s+", " ", s).strip().lower()
-    return s
-
-def find_player_by_name(name: str):
-    target = _normalize_char_name(name)
-    if not target:
-        return None
-    for uid in iter_player_ids():
-        pdata = get_player_data_light(uid)
-        n = _normalize_char_name((pdata or {}).get("character_name", ""))
-        if n and n == target:
-            return uid, pdata
-    return None
-
-def find_players_by_name_partial(query: str):
-    def _normalize(s: str) -> str:
-        import unicodedata as _u, re as _r
-        s = (s or "")
-        s = _u.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
-        s = _r.sub(r"\s+", " ", s).strip().lower()
-        return s
-
-    nq = _normalize(query)
-    if not nq:
-        return []
-
-    out = []
-    for uid in iter_player_ids():
-        pdata = get_player_data_light(uid)
-        name = (pdata or {}).get("character_name", "")
-        if nq in _normalize(name):
-            out.append((uid, pdata))
-    return out
-
-_VS_SET = {0xFE0E, 0xFE0F}
-def _is_skin_tone(cp: int) -> bool:
-    return 0x1F3FB <= cp <= 0x1F3FF
-
-def _strip_vs_and_tones(s: str) -> str:
-    if not isinstance(s, str):
-        return ""
-    s = unicodedata.normalize("NFKC", s)
-    out = []
-    for ch in s:
-        cp = ord(ch)
-        if cp in _VS_SET or _is_skin_tone(cp):
-            continue
-        out.append(ch)
-    return "".join(out).strip()
-
-def _emoji_variants(s: str):
-    base = _strip_vs_and_tones(s)
-    yield base
-    if "\u200D" in base:
-        yield base.replace("\u200D", "")
-
-def find_player_by_name_norm(name: str) -> Optional[Tuple[int, dict]]:
-    qvars = list(_emoji_variants(name))
-    if not qvars:
-        return None
-    for uid in iter_player_ids():
-        pdata = get_player_data_light(uid)
-        pname = (pdata or {}).get("character_name", "")
-        nvars = list(_emoji_variants(pname))
-        if any(qv == nv for qv in qvars for nv in nvars):
-            return uid, pdata
-    return None
-
-def find_by_username(username: str) -> Optional[dict]:
-    u = (username or "").lstrip("@").strip().lower()
-    if not u:
-        return None
-    CAND_KEYS = ("username", "telegram_username", "tg_username")
-    for uid in iter_player_ids():
-        pdata = get_player_data_light(uid)
-        for k in CAND_KEYS:
-            val = str((pdata or {}).get(k, "")).lstrip("@").strip().lower()
-            if val and val == u:
-                return pdata
-    return None
 
 # =========================
 # PLAYER CREATION
@@ -588,18 +616,15 @@ def spend_gold(player_data: dict, amount: int) -> bool:
     set_gold(player_data, cur - amount)
     return True
 
-# 💎 GEMAS
 def get_gems(player_data: dict) -> int:
     try:
-        # aceita ambas chaves ("gems" e "gemas")
         return int(player_data.get("gems", player_data.get(GEMS_KEY_PT, 0)))
     except Exception:
         return 0
 
 def set_gems(player_data: dict, value: int) -> dict:
     val = max(0, int(value))
-    player_data["gems"] = val  # sempre escreve em EN
-    # mantém espelho pt-br se existir no save antigo
+    player_data["gems"] = val
     if GEMS_KEY_PT in player_data:
         player_data[GEMS_KEY_PT] = val
     return player_data
@@ -630,7 +655,6 @@ def _sanitize_and_migrate_gold(player_data: dict) -> None:
         add_gold(player_data, int(raw_gold))
         inv.pop(GOLD_KEY, None)
 
-    
     for gk in (GEMS_KEY_EN, GEMS_KEY_PT):
         raw_gems = inv.get(gk)
         if isinstance(raw_gems, (int, float)):
@@ -644,19 +668,14 @@ def add_item_to_inventory(player_data: dict, item_id: str, quantity: int = 1):
     if qty == 0:
         return player_data
 
-    # Ouro e Gemas possuem atalhos
     if item_id == GOLD_KEY:
-        if qty > 0:
-            add_gold(player_data, qty)
-        else:
-            spend_gold(player_data, -qty)
+        if qty > 0: add_gold(player_data, qty)
+        else: spend_gold(player_data, -qty)
         return player_data
 
     if item_id in GEM_KEYS:
-        if qty > 0:
-            add_gems(player_data, qty)
-        else:
-            spend_gems(player_data, -qty)
+        if qty > 0: add_gems(player_data, qty)
+        else: spend_gems(player_data, -qty)
         return player_data
 
     inventory = player_data.setdefault('inventory', {})
@@ -711,20 +730,15 @@ def get_player_total_stats(player_data: dict) -> dict:
     inventory = player_data.get('inventory', {}) or {}
     equipped = player_data.get('equipment', {}) or {}
     for slot, unique_id in (equipped.items() if isinstance(equipped, dict) else []):
-        if not unique_id:
-            continue
+        if not unique_id: continue
         inst = inventory.get(unique_id)
-        if not isinstance(inst, dict):
-            continue
+        if not isinstance(inst, dict): continue
         ench = inst.get('enchantments', {}) or {}
         for stat_key, data in ench.items():
             val = _ival((data or {}).get('value'))
-            if stat_key == 'dmg':
-                total['attack'] += val
-            elif stat_key == 'hp':
-                total['max_hp'] += val
-            elif stat_key in ('defense', 'initiative', 'luck'):
-                total[stat_key] += val
+            if stat_key == 'dmg': total['attack'] += val
+            elif stat_key == 'hp': total['max_hp'] += val
+            elif stat_key in ('defense', 'initiative', 'luck'): total[stat_key] += val
     
     clan_id = player_data.get("clan_id")
     if clan_id:
@@ -735,28 +749,22 @@ def get_player_total_stats(player_data: dict) -> dict:
             total['max_hp'] = int(total['max_hp'] * percent_bonus)
             total['attack'] = int(total['attack'] * percent_bonus)
             total['defense'] = int(total['defense'] * percent_bonus)
-           
+            
         if "flat_hp_bonus" in clan_buffs:
             total['max_hp'] += clan_buffs["flat_hp_bonus"]
             
-
     return total
 
 def get_player_dodge_chance(player_data: dict) -> float:
-    """Calcula a chance de esquiva (de 0.0 a 1.0) com base na Iniciativa."""
     total_stats = get_player_total_stats(player_data)
     initiative = total_stats.get('initiative', 0)
     dodge_chance = (initiative * 0.4) / 100.0
-    
     return min(dodge_chance, 0.75)
 
 def get_player_double_attack_chance(player_data: dict) -> float:
-    """Calcula a chance de ataque duplo (de 0.0 a 1.0) com base na Iniciativa."""
     total_stats = get_player_total_stats(player_data)
     initiative = total_stats.get('initiative', 0)
-    
     double_attack_chance = (initiative * 0.25) / 100.0
-    
     return min(double_attack_chance, 0.50)
 
 def is_unique_item_entry(value) -> bool:
@@ -851,25 +859,17 @@ def mark_class_choice_offered(user_id: int) -> None:
     save_player_data(user_id, pdata)
 
 def _try_finalize_timed_action_inplace(player_data: dict) -> bool:
-    """
-    Verifica e finaliza ações agendadas que já deveriam ter terminado.
-    Versão final e robusta.
-    """
     state = player_data.get("player_state") or {}
     action = state.get("action")
     user_id = player_data.get("user_id")
 
-    # Adicionamos "travel" à lista
     actions_com_timer = ("refining", "crafting", "collecting", "exploring", "travel")
     if action not in actions_com_timer:
         return False
-
-    # Para um projeto real, considere usar o módulo `logging` em vez de `print`.
-    # print(f"\n--- DEBUG AÇÃO PRESA: Verificando '{action}' para o jogador {user_id} ---")
     
     try:
         finish_time_iso = state.get("finish_time")
-        finish_ts = state.get("travel_finish_ts") # Específico para o estado antigo de viagem
+        finish_ts = state.get("travel_finish_ts")
         
         hora_de_termino = 0
         if finish_time_iso:
@@ -884,8 +884,6 @@ def _try_finalize_timed_action_inplace(player_data: dict) -> bool:
                 dest = state.get("travel_dest")
                 if dest:
                     player_data["current_location"] = dest
-            
-            # ... (lógicas para outras ações como refino, coleta, etc.) ...
             
             player_data["player_state"] = {"action": "idle"}
             return True
@@ -1196,48 +1194,31 @@ def _allowed_points_for_level_with_class(pdata: dict) -> int:
     return per_lvl * max(0, lvl - 1)
 
 # =========================
-# FUNÇÕES DE LÓGICA DO PVP (NOVO BLOCO)
+# FUNÇÕES DE LÓGICA DO PVP
 # =========================
 
 def get_pvp_points(player_data: dict) -> int:
-    """Retorna os pontos de PvP de um jogador, com um valor padrão de 0."""
     return int(player_data.get("pvp_points", 0))
 
 def add_pvp_points(player_data: dict, amount: int):
-    """Adiciona (ou remove, se o valor for negativo) pontos de PvP a um jogador."""
     current_points = get_pvp_points(player_data)
-    player_data["pvp_points"] = max(0, current_points + amount) # Garante que os pontos não fiquem negativos.
+    player_data["pvp_points"] = max(0, current_points + amount)
 
 def get_pvp_entries(player_data: dict) -> int:
-    """
-    Retorna o número de entradas de PvP que o jogador ainda tem para o dia atual.
-    Se o dia mudou, reinicia as entradas para o valor padrão (ex: 10).
-    """
     today = datetime.now(timezone.utc).date().isoformat()
-    # Verifica se a data do último reset é diferente da data de hoje.
     if player_data.get("last_pvp_entry_reset") != today:
-        # Se for um novo dia, reinicia as entradas e atualiza a data do reset.
         player_data["pvp_entries_left"] = DEFAULT_PVP_ENTRIES
         player_data["last_pvp_entry_reset"] = today
     
-    # Retorna o número de entradas restantes.
     return player_data.get("pvp_entries_left", DEFAULT_PVP_ENTRIES)
 
 def use_pvp_entry(player_data: dict) -> bool:
-    """
-    Consome uma entrada de PvP. Retorna True se o jogador tinha entradas
-    e a operação foi bem-sucedida, ou False caso contrário.
-    """
     current_entries = get_pvp_entries(player_data)
     if current_entries > 0:
         player_data["pvp_entries_left"] = current_entries - 1
-        return True # Sucesso!
-    return False # Sem entradas suficientes.
+        return True
+    return False
 
 def add_pvp_entries(player_data: dict, amount: int):
-    """
-    Adiciona (ou remove) entradas de PvP a um jogador. Útil para itens
-    da loja ou recompensas que dão mais tentativas de PvP.
-    """
     current_entries = get_pvp_entries(player_data)
     player_data["pvp_entries_left"] = current_entries + amount
