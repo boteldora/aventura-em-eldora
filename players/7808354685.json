@@ -1,0 +1,414 @@
+{
+    "character_name": "MatadordePassarinho",
+    "class": "Caçador",
+    "level": 15,
+    "xp": 584,
+    "max_hp": 135,
+    "current_hp": 132,
+    "attack": 34,
+    "defense": 10,
+    "initiative": 37,
+    "luck": 22,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "gold": 11882,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {
+        "type": "esfolador",
+        "level": 5,
+        "xp": 97
+    },
+    "inventory": {
+        "cristal_de_abertura": 10,
+        "pano_simples": 3,
+        "esporo_de_cogumelo": 19,
+        "couro_de_lobo": 13,
+        "ectoplasma": 92,
+        "madeira_rara": 27,
+        "presa_de_javali": 3,
+        "seiva_de_ent": 51,
+        "joia_da_criacao": 18,
+        "cajado_fragil": 1,
+        "pena": 396,
+        "couro_de_lobo_alfa": 33,
+        "linho": 2,
+        "pedra_do_aprimoramento": 1,
+        "gema_bruta": 0,
+        "palha_amaldicoada": 6,
+        "ac9d92c9-1621-4b41-a541-7d18f81f0fdf": {
+            "uuid": "26dca38b-e63a-4deb-8754-08fb32f183f5",
+            "base_id": "brinco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Brinco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "98511b3c-3103-4f2e-a477-da8ca52ff378": {
+            "uuid": "7ad63604-3971-4667-ab57-a877039b797d",
+            "base_id": "anel_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "madeira": 0,
+        "d9aa7b40-c7ee-4fa9-abf0-9977469ffd89": {
+            "uuid": "a482bf3d-87f4-4e97-95e6-5977db714e9f",
+            "base_id": "colar_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Colar de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "8b0235de-1568-4e26-9291-70735c29953e": {
+            "uuid": "f6487636-2655-4cf9-9250-ad48d157e156",
+            "base_id": "arco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                7,
+                20
+            ],
+            "enchantments": {
+                "precisao": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 14,
+                "max": 19,
+                "scales_with": "precisao"
+            },
+            "display_name": "Arco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "nucleo_forja_fraco": 2,
+        "fio_de_prata": 0,
+        "pergaminho_durabilidade": 1,
+        "emblema_bardo": 3,
+        "essencia_corte": 8,
+        "essencia_furia": 6,
+        "essencia_luz": 7,
+        "essencia_harmonia": 7,
+        "emblema_monge": 3,
+        "reliquia_mistica": 4,
+        "essencia_arcana": 7,
+        "grimorio_arcano": 5,
+        "essencia_letal": 5,
+        "essencia_ki": 4,
+        "emblema_mago": 10,
+        "totem_ancestral": 6,
+        "emblema_samurai": 2,
+        "batuta_maestria": 7,
+        "essencia_disciplina": 5,
+        "selo_sagrado": 5,
+        "essencia_precisao": 3,
+        "essencia_fera": 8,
+        "manto_eterno": 5,
+        "emblema_cacador": 6,
+        "emblema_guerreiro": 5,
+        "emblema_berserker": 3,
+        "marca_predador": 2,
+        "lamina_sagrada": 3,
+        "essencia_sombra": 4,
+        "essencia_elemental": 5,
+        "emblema_assassino": 3,
+        "essencia_guardia": 4,
+        "120e89fb-9617-404f-bce7-3624cf789aba": {
+            "uuid": "cef6b6d8-6e6a-483a-8615-198335761461",
+            "base_id": "botas_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Botas de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "7edcd1ee-40d5-4040-acd1-8a4499e0ad11": {
+            "uuid": "640b0406-8c2a-401c-8957-792f5293a9d1",
+            "base_id": "luvas_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Luvas de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "0fee54cd-fe7b-47c7-b5d7-0f85ff29b69f": {
+            "uuid": "9d8f52ea-4340-45bb-8add-dc1e3bc42bbb",
+            "base_id": "capuz_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Capuz de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "6de2d640-e511-41c9-8cd4-f871ec7852b7": {
+            "uuid": "36945976-7380-425c-b71b-ee54faa4894a",
+            "base_id": "calcas_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Calças de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        }
+    },
+    "equipment": {
+        "arma": "8b0235de-1568-4e26-9291-70735c29953e",
+        "elmo": "0fee54cd-fe7b-47c7-b5d7-0f85ff29b69f",
+        "armadura": null,
+        "calca": "6de2d640-e511-41c9-8cd4-f871ec7852b7",
+        "luvas": "7edcd1ee-40d5-4040-acd1-8a4499e0ad11",
+        "botas": "120e89fb-9617-404f-bce7-3624cf789aba",
+        "anel": "98511b3c-3103-4f2e-a477-da8ca52ff378",
+        "colar": "d9aa7b40-c7ee-4fa9-abf0-9977469ffd89",
+        "brinco": "ac9d92c9-1621-4b41-a541-7d18f81f0fdf"
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "in_combat",
+        "started_at": "2025-09-27T02:44:53.511620+00:00",
+        "details": {
+            "id": "lobo_alfa",
+            "monster_name": "Lobo Alfa",
+            "monster_hp": 14,
+            "monster_max_hp": 70,
+            "monster_attack": 15,
+            "monster_defense": 7,
+            "monster_initiative": 10,
+            "monster_luck": 15,
+            "monster_gold_drop": 1,
+            "monster_xp_reward": 30,
+            "loot_table": [
+                {
+                    "item_id": "couro_de_lobo_alfa",
+                    "drop_chance": 80
+                }
+            ],
+            "battle_log": [
+                "➡️ MatadordePassarinho 𝒂𝒕𝒂𝒄𝒂!",
+                "💥 𝑽𝒐𝒄𝒆̂ 𝒄𝒂𝒖𝒔𝒂 28 𝒅𝒆 𝒅𝒂𝒏𝒐.",
+                "⬅️ Lobo Alfa 𝒂𝒕𝒂𝒄𝒂!",
+                "🩸 𝑽𝒐𝒄𝒆̂ 𝒓𝒆𝒄𝒆𝒃𝒆 5 𝒅𝒆 𝒅𝒂𝒏𝒐.",
+                "➡️ MatadordePassarinho 𝒂𝒕𝒂𝒄𝒂!",
+                "💥 𝑽𝒐𝒄𝒆̂ 𝒄𝒂𝒖𝒔𝒂 28 𝒅𝒆 𝒅𝒂𝒏𝒐.",
+                "⬅️ Lobo Alfa 𝒂𝒕𝒂𝒄𝒂!",
+                "🩸 𝑽𝒐𝒄𝒆̂ 𝒓𝒆𝒄𝒆𝒃𝒆 5 𝒅𝒆 𝒅𝒂𝒏𝒐."
+            ],
+            "media_hint": "lobo_alfa_media",
+            "is_elite": false,
+            "region_key": "floresta_sombria",
+            "used_weapon": true,
+            "took_damage": true
+        }
+    },
+    "last_chat_id": 7808354685,
+    "pvp_points": 1150,
+    "pvp_history": [
+        {
+            "data": "2025-08-14T17:46:42",
+            "contra": "Murdock",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        },
+        {
+            "data": "2025-08-14T18:16:45",
+            "contra": "adm",
+            "resultado": "derrota",
+            "pontos_finais": 100
+        },
+        {
+            "data": "2025-08-17T20:31:34",
+            "contra": "Finn",
+            "resultado": "vitoria",
+            "pontos_finais": 200
+        },
+        {
+            "data": "2025-08-17T20:32:21",
+            "contra": "TheWar",
+            "resultado": "vitoria",
+            "pontos_finais": 300
+        },
+        {
+            "data": "2025-08-17T20:41:07",
+            "contra": "Andjur",
+            "resultado": "vitoria",
+            "pontos_finais": 400
+        },
+        {
+            "data": "2025-08-21T19:43:16",
+            "contra": "Zard",
+            "resultado": "vitoria",
+            "pontos_finais": 500
+        },
+        {
+            "data": "2025-08-21T19:44:01",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 600
+        },
+        {
+            "data": "2025-08-31T09:22:45",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 650
+        },
+        {
+            "data": "2025-09-01T14:50:52",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 700
+        },
+        {
+            "data": "2025-09-03T12:09:16",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 750
+        },
+        {
+            "data": "2025-09-03T12:11:21",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 800
+        },
+        {
+            "data": "2025-09-04T16:31:25",
+            "contra": "Grigor Kulenov",
+            "resultado": "derrota",
+            "pontos_finais": 850
+        },
+        {
+            "data": "2025-09-04T16:32:01",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 950
+        },
+        {
+            "data": "2025-09-04T16:32:15",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 1050
+        },
+        {
+            "data": "2025-09-05T21:29:04",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1100
+        },
+        {
+            "data": "2025-09-19T07:21:44",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1150
+        }
+    ],
+    "energy_last_ts": "2025-09-27T02:45:07.000785+00:00",
+    "class_key": "cacador",
+    "class_choice_offered": true,
+    "base_stats": {
+        "max_hp": 132,
+        "attack": 34,
+        "defense": 3,
+        "initiative": 34,
+        "luck": 18
+    },
+    "user_id": 7808354685,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

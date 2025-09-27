@@ -1,0 +1,236 @@
+{
+    "character_name": "Chaos",
+    "class": "Caçador",
+    "level": 16,
+    "xp": 5118,
+    "max_hp": 138,
+    "current_hp": 139,
+    "attack": 36,
+    "defense": 3,
+    "initiative": 36,
+    "luck": 19,
+    "stat_points": 15,
+    "energy": 20,
+    "max_energy": 20,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {
+        "type": "armeiro",
+        "level": 4,
+        "xp": 132
+    },
+    "inventory": {
+        "cristal_de_abertura": 52,
+        "seiva_de_ent": 60,
+        "ectoplasma": 107,
+        "joia_da_criacao": 28,
+        "pano_simples": 2,
+        "madeira_rara": 0,
+        "couro_curtido": 59,
+        "dente_afiado": 1,
+        "palha_amaldicoada": 25,
+        "presa_de_javali": 27,
+        "gema_bruta": 14,
+        "couro_de_lobo_alfa": 39,
+        "rolo_de_pano_simples": 18,
+        "couro_de_lobo": 3,
+        "linho": 29,
+        "pedra_do_aprimoramento": 6,
+        "pena": 4,
+        "a0fb3d6b-2b92-4553-935c-526174969112": {
+            "uuid": "d407906c-5cb0-4a4a-bbbf-01d0c5ae7132",
+            "base_id": "anel_sorrateiro_assassino",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel Sorrateiro",
+            "class_req": [
+                "assassino"
+            ]
+        },
+        "pedra": 12,
+        "carapaca_de_pedra": 3,
+        "pele_de_troll": 2,
+        "asa_de_morcego": 1,
+        "engrenagem_usada": 7,
+        "essencia_de_fogo": 6,
+        "martelo_enferrujado": 7,
+        "barra_de_ferro": 28,
+        "escama_incandescente": 6,
+        "escama_de_salamandra": 2,
+        "essencia_fungica": 9
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": "a0fb3d6b-2b92-4553-935c-526174969112",
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "reino_eldora",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "gold": 11560,
+    "energy_last_ts": "2025-09-04T21:16:15.397051+00:00",
+    "last_chat_id": 1540827118,
+    "class_key": "cacador",
+    "class_choice_offered": true,
+    "pvp_points": 1500,
+    "pvp_history": [
+        {
+            "data": "2025-08-24T15:07:53",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 100
+        },
+        {
+            "data": "2025-08-24T15:08:16",
+            "contra": "Malvadeza",
+            "resultado": "vitoria",
+            "pontos_finais": 200
+        },
+        {
+            "data": "2025-08-24T15:08:45",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 300
+        },
+        {
+            "data": "2025-08-26T02:24:07",
+            "contra": "Malvadeza",
+            "resultado": "vitoria",
+            "pontos_finais": 400
+        },
+        {
+            "data": "2025-08-26T02:24:32",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 500
+        },
+        {
+            "data": "2025-08-26T02:24:58",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 600
+        },
+        {
+            "data": "2025-08-31T09:22:45",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 700
+        },
+        {
+            "data": "2025-08-31T23:07:13",
+            "contra": "Sky",
+            "resultado": "vitoria",
+            "pontos_finais": 800
+        },
+        {
+            "data": "2025-09-01T14:50:30",
+            "contra": "Muordecay",
+            "resultado": "derrota",
+            "pontos_finais": 850
+        },
+        {
+            "data": "2025-09-01T14:50:52",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 950
+        },
+        {
+            "data": "2025-09-01T14:51:08",
+            "contra": "Muordecay",
+            "resultado": "derrota",
+            "pontos_finais": 1000
+        },
+        {
+            "data": "2025-09-01T14:51:22",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota",
+            "pontos_finais": 1050
+        },
+        {
+            "data": "2025-09-05T21:26:36",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1100
+        },
+        {
+            "data": "2025-09-05T21:27:27",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1150
+        },
+        {
+            "data": "2025-09-05T21:27:55",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1200
+        },
+        {
+            "data": "2025-09-05T21:28:43",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1250
+        },
+        {
+            "data": "2025-09-05T21:30:18",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1300
+        },
+        {
+            "data": "2025-09-19T07:20:53",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1350
+        },
+        {
+            "data": "2025-09-20T20:22:42",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-20T22:25:05",
+            "contra": "Grigor Kulenov",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T13:28:03",
+            "contra": "Sky",
+            "resultado": "derrota"
+        }
+    ],
+    "base_stats": {
+        "max_hp": 138,
+        "attack": 36,
+        "defense": 3,
+        "initiative": 36,
+        "luck": 19
+    },
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "user_id": 1540827118,
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

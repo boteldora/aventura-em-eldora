@@ -1,0 +1,285 @@
+{
+    "character_name": "Elendihl",
+    "class": "Guerreiro",
+    "level": 16,
+    "xp": 1120,
+    "max_hp": 172,
+    "current_hp": 182,
+    "attack": 34,
+    "defense": 36,
+    "initiative": 4,
+    "luck": 3,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "gold": 5863,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {
+        "type": "minerador",
+        "level": 7,
+        "xp": 61
+    },
+    "inventory": {
+        "cristal_de_abertura": 4,
+        "esporo_de_cogumelo": 52,
+        "presa_de_javali": 3,
+        "ectoplasma": 88,
+        "pedra": 64,
+        "couro_de_lobo": 17,
+        "pano_simples": 38,
+        "ferro": 105,
+        "seiva_de_ent": 58,
+        "madeira_rara": 30,
+        "joia_da_criacao": 25,
+        "couro_de_lobo_alfa": 51,
+        "pedra_do_aprimoramento": 1,
+        "palha_amaldicoada": 4,
+        "linho": 2,
+        "gema_bruta": 0,
+        "fio_de_prata": 1,
+        "madeira": 1,
+        "a23ed0dc-8aff-4188-a571-9da1c91da400": {
+            "uuid": "90942c95-97e8-41d3-a203-d160b5a87d02",
+            "base_id": "anel_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "002d2e15-764e-45ad-8f4b-a1b2e31ab9e2": {
+            "uuid": "535dd78d-3d64-48ba-8275-d74eb9d93e59",
+            "base_id": "espada_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 2,
+            "durability": [
+                1,
+                20
+            ],
+            "enchantments": {
+                "dmg": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 12,
+                "max": 18,
+                "scales_with": "forca"
+            },
+            "display_name": "Espada de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "essencia_elemental": 4,
+        "emblema_samurai": 6,
+        "selo_sagrado": 3,
+        "emblema_berserker": 5,
+        "grimorio_arcano": 6,
+        "emblema_monge": 4,
+        "emblema_mago": 7,
+        "emblema_bardo": 5,
+        "emblema_assassino": 4,
+        "reliquia_mistica": 4,
+        "manto_eterno": 6,
+        "essencia_disciplina": 5,
+        "essencia_sombra": 3,
+        "essencia_fera": 2,
+        "essencia_guardia": 6,
+        "totem_ancestral": 3,
+        "essencia_arcana": 3,
+        "essencia_precisao": 5,
+        "emblema_guerreiro": 3,
+        "essencia_ki": 3,
+        "essencia_corte": 2,
+        "essencia_letal": 4,
+        "essencia_harmonia": 2,
+        "emblema_cacador": 2,
+        "batuta_maestria": 4,
+        "lamina_sagrada": 7,
+        "marca_predador": 1,
+        "essencia_furia": 2,
+        "bc7833f7-da5f-41fc-9000-9af020c18061": {
+            "uuid": "b14156a3-096b-4f51-ac30-e51b5a9e68d6",
+            "base_id": "brinco_ferro_guerreiro",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                4,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "luck": {
+                    "value": 1,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Brinco de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "287bb9f8-c5fb-4eb6-92ad-88ce71226031": {
+            "uuid": "0c5e30b1-354f-4119-a97d-05eb7ed9b91a",
+            "base_id": "colar_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                4,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Colar de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "nucleo_forja_fraco": 1,
+        "couro_curtido": 14,
+        "barra_de_ferro": 2,
+        "2531379a-80ea-4211-a882-494ae97df96e": {
+            "uuid": "1cfb52ed-7ec1-4eb3-9998-f7205001aa2b",
+            "base_id": "anel_ferro_guerreiro",
+            "rarity": "raro",
+            "upgrade_level": 8,
+            "durability": [
+                4,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 8,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 8,
+                    "source": "affix"
+                },
+                "defense": {
+                    "value": 8,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Anel de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "joia_da_forja": 9,
+        "pergaminho_durabilidade": 6
+    },
+    "equipment": {
+        "arma": "002d2e15-764e-45ad-8f4b-a1b2e31ab9e2",
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": "2531379a-80ea-4211-a882-494ae97df96e",
+        "colar": "287bb9f8-c5fb-4eb6-92ad-88ce71226031",
+        "brinco": "bc7833f7-da5f-41fc-9000-9af020c18061"
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "last_chat_id": 7913385053,
+    "energy_last_ts": "2025-09-26T17:22:19.883895+00:00",
+    "invested": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "initiative": 0,
+        "luck": 0
+    },
+    "base_stats": {
+        "max_hp": 172,
+        "attack": 20,
+        "defense": 34,
+        "initiative": 4,
+        "luck": 3
+    },
+    "class_key": "guerreiro",
+    "class_choice_offered": true,
+    "user_id": 7913385053,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "pvp_points": 50,
+    "pvp_history": [
+        {
+            "data": "2025-09-19T07:19:52",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        }
+    ],
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27",
+    "missions": {
+        "daily_rerolls_left": 2,
+        "last_refresh_date": "2025-09-23",
+        "active_missions": [
+            {
+                "mission_id": "hunt_ent_jovem",
+                "progress": 8,
+                "is_complete": true,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_any_3_elites",
+                "progress": 3,
+                "is_complete": true,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_espectro_do_bosque",
+                "progress": 8,
+                "is_complete": true,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_banshee_dos_campos",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "craft_leather_helmets",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            }
+        ]
+    }
+}

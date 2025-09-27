@@ -1,0 +1,117 @@
+{
+    "character_name": "Malvadeza",
+    "class": "Assassino",
+    "level": 11,
+    "xp": 961,
+    "max_hp": 100,
+    "current_hp": 100,
+    "attack": 26,
+    "defense": 9,
+    "initiative": 40,
+    "luck": 15,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "gold": 7790,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {
+        "type": "armeiro",
+        "level": 2,
+        "xp": 51
+    },
+    "inventory": {
+        "cristal_de_abertura": 52,
+        "ectoplasma": 75,
+        "esporo_de_cogumelo": 88,
+        "couro_curtido": 26,
+        "joia_da_criacao": 14,
+        "madeira_rara": 26,
+        "dente_afiado": 1,
+        "seiva_de_ent": 45,
+        "presa_de_javali": 30,
+        "couro_de_lobo_alfa": 46,
+        "minerio_de_ferro": 1,
+        "escama_de_salamandra": 1,
+        "pedra": 1,
+        "rolo_de_pano_simples": 8,
+        "couro_de_lobo": 1,
+        "pano_simples": 3
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "last_chat_id": 5087293279,
+    "pvp_points": 350,
+    "pvp_history": [
+        {
+            "data": "2025-08-16T17:30:08",
+            "contra": "Jonny",
+            "resultado": "vitoria",
+            "pontos_finais": 100
+        },
+        {
+            "data": "2025-08-16T17:31:22",
+            "contra": "Jonny",
+            "resultado": "derrota",
+            "pontos_finais": 150
+        },
+        {
+            "data": "2025-08-24T15:08:16",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 200
+        },
+        {
+            "data": "2025-08-26T02:24:07",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 250
+        },
+        {
+            "data": "2025-08-31T23:06:28",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 300
+        },
+        {
+            "data": "2025-09-19T07:19:18",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 350
+        }
+    ],
+    "energy_last_ts": "2025-09-06T20:50:20.562614+00:00",
+    "base_stats": {
+        "max_hp": 97,
+        "attack": 26,
+        "defense": 2,
+        "initiative": 37,
+        "luck": 15
+    },
+    "class_key": "assassino",
+    "class_choice_offered": true,
+    "user_id": 5087293279,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

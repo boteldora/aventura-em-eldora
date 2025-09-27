@@ -1,0 +1,712 @@
+{
+    "character_name": "Murdock",
+    "class": "mago",
+    "level": 23,
+    "xp": 3053,
+    "max_hp": 155,
+    "current_hp": 171,
+    "attack": 83,
+    "defense": 19,
+    "initiative": 27,
+    "luck": 28,
+    "stat_points": 0,
+    "energy": 35,
+    "max_energy": 20,
+    "party_id": null,
+    "profession": {
+        "type": "joalheiro",
+        "level": 10,
+        "xp": 600
+    },
+    "inventory": {
+        "cristal_de_abertura": 3,
+        "ectoplasma": 225,
+        "madeira_rara": 17,
+        "seiva_de_ent": 113,
+        "esporo_de_cogumelo": 31,
+        "joia_da_criacao": 46,
+        "couro_de_lobo_alfa": 163,
+        "pedra_do_aprimoramento": 22,
+        "cajado_fragil": 16,
+        "dente_afiado": 16,
+        "ferro": 235,
+        "palha_amaldicoada": 55,
+        "linho": 65,
+        "couro_curtido": 29,
+        "18691930-908b-4a66-befb-a208daa5c863": {
+            "base_id": "anel_runico",
+            "rarity": "comum",
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dmg": {
+                    "level": 1,
+                    "value": 1
+                }
+            },
+            "tier": 1,
+            "class_tag": "mago"
+        },
+        "pena": 3,
+        "ea6b8710-9174-4890-ae68-160baaff430b": {
+            "base_id": "brinco_runico",
+            "rarity": "comum",
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dmg": {
+                    "level": 1,
+                    "value": 3
+                }
+            },
+            "tier": 1,
+            "class_tag": "mago"
+        },
+        "gema_bruta": 79,
+        "41c0e167-743b-421a-afe0-ede5e82ce02a": {
+            "base_id": "cajado_fragil"
+        },
+        "rolo_de_pano_simples": 56,
+        "couro_de_lobo": 6,
+        "essencia_fungica": 28,
+        "ponta_de_osso_afiada": 27,
+        "carapaca_de_pedra": 39,
+        "pedra": 132,
+        "barra_de_ferro": 43,
+        "escama_de_salamandra": 31,
+        "minerio_de_ferro": 23,
+        "nucleo_de_golem": 15,
+        "olho_de_basilisco": 15,
+        "poeira_magica": 6,
+        "essencia_de_fogo": 10,
+        "escama_incandescente": 6,
+        "martelo_enferrujado": 11,
+        "engrenagem_usada": 14,
+        "asa_de_morcego": 2,
+        "sangue_regenerativo": 3,
+        "pele_de_troll": 7,
+        "barra_bronze": 2,
+        "2042976c-5f79-4efe-83b3-54c8c112e788": {
+            "uuid": "dad5db95-0233-48d4-b673-e9efbe7bd19a",
+            "base_id": "cajado_aprendiz_mago",
+            "rarity": "comum",
+            "upgrade_level": 7,
+            "durability": [
+                14,
+                20
+            ],
+            "enchantments": {
+                "inteligencia": {
+                    "value": 7,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 7,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "arcano",
+                "min": 15,
+                "max": 20,
+                "scales_with": "inteligencia"
+            },
+            "display_name": "Cajado de Aprendiz",
+            "class_req": [
+                "mago"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "membrana_de_couro_fino": 1,
+        "9ea9ac94-7dab-42b4-99b7-7bbce8055363": {
+            "uuid": "53f7784a-8c53-4d32-b805-1c764dd0a9b4",
+            "base_id": "brinco_gema_mago",
+            "rarity": "comum",
+            "upgrade_level": 7,
+            "durability": [
+                14,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 7,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Brinco de Gema do Mago",
+            "class_req": [
+                "mago"
+            ],
+            "enh_failstacks": 1.0
+        },
+        "tabua_de_madeira_rara": 13,
+        "pano_simples": 6,
+        "presa_de_javali": 28,
+        "emblema_monge": 3,
+        "essencia_sombra": 8,
+        "grimorio_arcano": 4,
+        "essencia_elemental": 5,
+        "essencia_guardia": 3,
+        "selo_sagrado": 4,
+        "totem_ancestral": 5,
+        "essencia_precisao": 4,
+        "emblema_bardo": 4,
+        "emblema_guerreiro": 5,
+        "emblema_berserker": 6,
+        "lamina_sagrada": 4,
+        "reliquia_mistica": 6,
+        "essencia_ki": 4,
+        "essencia_furia": 6,
+        "essencia_corte": 3,
+        "essencia_luz": 6,
+        "essencia_letal": 8,
+        "marca_predador": 3,
+        "batuta_maestria": 4,
+        "essencia_arcana": 3,
+        "essencia_harmonia": 1,
+        "emblema_cacador": 5,
+        "essencia_fera": 4,
+        "emblema_samurai": 4,
+        "essencia_disciplina": 2,
+        "essencia_encanto": 3,
+        "emblema_mago": 2,
+        "manto_eterno": 4,
+        "madeira": 23,
+        "emblema_assassino": 1,
+        "b21f29ea-2423-4867-8bd7-00c8abab505e": {
+            "uuid": "92b2523b-10cd-41b1-876c-0d98b46c9fe4",
+            "base_id": "colar_gema_mago",
+            "rarity": "comum",
+            "upgrade_level": 7,
+            "durability": [
+                14,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 7,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Colar de Gema do Mago",
+            "class_req": [
+                "mago"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "coracao_de_magma": 7,
+        "gema_polida": 3,
+        "fragmento_gargula": 3,
+        "joia_da_forja": 3,
+        "87142040-a8bb-407a-9e5a-69e8acb9b135": {
+            "uuid": "6642b54e-f08c-436a-b293-eb70dbb26e17",
+            "base_id": "anel_gema_mago",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "defense": {
+                    "value": 1,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Anel de Gema do Mago",
+            "class_req": [
+                "mago"
+            ]
+        },
+        "8f79f5e0-f6b9-495f-b18d-272dd3bc39ba": {
+            "uuid": "67dad03e-9dcc-42c6-b401-a844e825683c",
+            "base_id": "anel_gema_mago",
+            "rarity": "bom",
+            "upgrade_level": 2,
+            "durability": [
+                14,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 2,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 2,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Anel de Gema do Mago",
+            "class_req": [
+                "mago"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "585a735b-6277-401e-9a9d-42cf809a60c9": {
+            "uuid": "e3e5fcab-b8d5-43f7-9752-cf821bb7948c",
+            "base_id": "brinco_gema_mago",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 1,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Brinco de Gema do Mago",
+            "class_req": [
+                "mago"
+            ]
+        },
+        "fio_de_prata": 1,
+        "pergaminho_durabilidade": 9
+    },
+    "equipment": {
+        "arma": "2042976c-5f79-4efe-83b3-54c8c112e788",
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": "8f79f5e0-f6b9-495f-b18d-272dd3bc39ba",
+        "colar": "b21f29ea-2423-4867-8bd7-00c8abab505e",
+        "brinco": "9ea9ac94-7dab-42b4-99b7-7bbce8055363"
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "premium_tier": "lenda",
+    "premium_expires_at": "2025-10-21T22:12:06.398451+00:00",
+    "gold": 35535,
+    "pvp_points": 4050,
+    "pvp_history": [
+        {
+            "data": "2025-08-14T17:38:32",
+            "contra": "adm",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        },
+        {
+            "data": "2025-08-14T17:43:47",
+            "contra": "adm",
+            "resultado": "vitoria",
+            "pontos_finais": 150
+        },
+        {
+            "data": "2025-08-14T17:46:42",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 250
+        },
+        {
+            "data": "2025-08-14T18:19:03",
+            "contra": "adm",
+            "resultado": "derrota",
+            "pontos_finais": 300
+        },
+        {
+            "data": "2025-08-14T18:19:50",
+            "contra": "adm",
+            "resultado": "vitoria",
+            "pontos_finais": 400
+        },
+        {
+            "data": "2025-08-14T18:35:50",
+            "contra": "adm",
+            "resultado": "derrota",
+            "pontos_finais": 450
+        },
+        {
+            "data": "2025-08-15T20:40:59",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 550
+        },
+        {
+            "data": "2025-08-15T21:24:41",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 650
+        },
+        {
+            "data": "2025-08-15T21:25:01",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria",
+            "pontos_finais": 750
+        },
+        {
+            "data": "2025-08-16T09:01:19",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 850
+        },
+        {
+            "data": "2025-08-16T09:01:47",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria",
+            "pontos_finais": 950
+        },
+        {
+            "data": "2025-08-17T20:33:17",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria",
+            "pontos_finais": 1050
+        },
+        {
+            "data": "2025-08-17T20:36:07",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1150
+        },
+        {
+            "data": "2025-08-18T17:14:43",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1250
+        },
+        {
+            "data": "2025-08-18T17:14:58",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1350
+        },
+        {
+            "data": "2025-08-18T17:15:14",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1450
+        },
+        {
+            "data": "2025-08-18T17:15:29",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1550
+        },
+        {
+            "data": "2025-08-19T20:33:46",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1650
+        },
+        {
+            "data": "2025-08-19T20:34:02",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1750
+        },
+        {
+            "data": "2025-08-19T20:37:49",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1850
+        },
+        {
+            "data": "2025-08-21T00:11:06",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1950
+        },
+        {
+            "data": "2025-08-21T21:00:41",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2000
+        },
+        {
+            "data": "2025-08-31T16:24:57",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2050
+        },
+        {
+            "data": "2025-09-05T04:28:11",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2100
+        },
+        {
+            "data": "2025-09-19T22:56:56",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2150
+        },
+        {
+            "data": "2025-09-20T07:51:41",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2200
+        },
+        {
+            "data": "2025-09-20T11:15:49",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2250
+        },
+        {
+            "data": "2025-09-20T11:15:56",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2300
+        },
+        {
+            "data": "2025-09-20T11:16:05",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2350
+        },
+        {
+            "data": "2025-09-20T11:35:17",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2400
+        },
+        {
+            "data": "2025-09-20T11:35:26",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2450
+        },
+        {
+            "data": "2025-09-20T11:35:43",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2500
+        },
+        {
+            "data": "2025-09-20T12:17:32",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2550
+        },
+        {
+            "data": "2025-09-20T12:17:47",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2600
+        },
+        {
+            "data": "2025-09-20T12:17:57",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2650
+        },
+        {
+            "data": "2025-09-20T12:18:13",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2700
+        },
+        {
+            "data": "2025-09-20T12:18:41",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2750
+        },
+        {
+            "data": "2025-09-20T12:18:59",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2800
+        },
+        {
+            "data": "2025-09-20T12:19:06",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2850
+        },
+        {
+            "data": "2025-09-20T12:25:43",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2900
+        },
+        {
+            "data": "2025-09-20T13:00:55",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 2950
+        },
+        {
+            "data": "2025-09-20T13:01:03",
+            "contra": "Bastos ADM",
+            "resultado": "derrota",
+            "pontos_finais": 3000
+        },
+        {
+            "data": "2025-09-21T13:28:18",
+            "contra": "Sky",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T13:28:41",
+            "contra": "Sky",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:48:53",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:49:13",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:49:28",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:49:40",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:54:28",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:54:37",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:54:53",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:55:11",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:55:20",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:18:50",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:18:59",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:19:08",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:19:19",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:19:35",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:19:49",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:20:22",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:38:28",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        }
+    ],
+    "energy_last_ts": "2025-09-27T04:09:00.060557+00:00",
+    "last_chat_id": 6499640658,
+    "invested": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "initiative": 0,
+        "luck": 0
+    },
+    "base_stats": {
+        "max_hp": 155,
+        "attack": 73,
+        "defense": 2,
+        "initiative": 27,
+        "luck": 26
+    },
+    "user_id": 6499640658,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "missions": {
+        "daily_rerolls_left": 1,
+        "last_refresh_date": "2025-09-26",
+        "active_missions": [
+            {
+                "mission_id": "hunt_cogumelo_gigante",
+                "progress": 9,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "couro_curtido_rapido",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_kobold_escavador",
+                "progress": 4,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_espectro_do_bosque",
+                "progress": 8,
+                "is_complete": true,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_goblin_batedor",
+                "progress": 5,
+                "is_complete": false,
+                "is_claimed": false
+            }
+        ]
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27",
+    "clan_id": "draconicos"
+}

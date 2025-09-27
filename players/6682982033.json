@@ -1,0 +1,194 @@
+{
+    "character_name": "Muordecay",
+    "class": "Samurai",
+    "level": 12,
+    "xp": 1822,
+    "max_hp": 127,
+    "current_hp": 127,
+    "attack": 28,
+    "defense": 15,
+    "initiative": 16,
+    "luck": 4,
+    "stat_points": 11,
+    "energy": 20,
+    "max_energy": 20,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {
+        "type": "ferreiro",
+        "level": 3,
+        "xp": 1
+    },
+    "inventory": {
+        "cristal_de_abertura": 52,
+        "presa_de_javali": 39,
+        "ectoplasma": 62,
+        "pano_simples": 4,
+        "esporo_de_cogumelo": 104,
+        "seiva_de_ent": 33,
+        "joia_da_criacao": 10,
+        "madeira_rara": 17,
+        "couro_curtido": 27,
+        "couro_de_lobo_alfa": 19,
+        "linho": 6,
+        "palha_amaldicoada": 7,
+        "rolo_de_pano_simples": 12,
+        "essencia_de_fogo": 5,
+        "gema_bruta": 3,
+        "minerio_de_ferro": 2,
+        "pena": 2,
+        "escama_incandescente": 3,
+        "engrenagem_usada": 10,
+        "barra_de_ferro": 4,
+        "pedra_do_aprimoramento": 2,
+        "martelo_enferrujado": 2,
+        "couro_de_lobo": 14,
+        "carapaca_de_pedra": 1,
+        "pedra": 2,
+        "fragmento_gargula": 2,
+        "pele_de_troll": 2,
+        "sangue_regenerativo": 1
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "gold": 6423,
+    "pvp_points": 1200,
+    "pvp_history": [
+        {
+            "data": "2025-08-17T09:17:30",
+            "contra": "Andjur",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        },
+        {
+            "data": "2025-08-17T10:12:55",
+            "contra": "Sky",
+            "resultado": "vitoria",
+            "pontos_finais": 150
+        },
+        {
+            "data": "2025-08-17T10:13:40",
+            "contra": "Will",
+            "resultado": "vitoria",
+            "pontos_finais": 250
+        },
+        {
+            "data": "2025-08-17T10:15:20",
+            "contra": "Sapo",
+            "resultado": "vitoria",
+            "pontos_finais": 350
+        },
+        {
+            "data": "2025-08-17T11:02:18",
+            "contra": "Grigor Kulenov",
+            "resultado": "derrota",
+            "pontos_finais": 400
+        },
+        {
+            "data": "2025-08-21T18:57:24",
+            "contra": "TheWar",
+            "resultado": "vitoria",
+            "pontos_finais": 500
+        },
+        {
+            "data": "2025-08-21T18:57:49",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota",
+            "pontos_finais": 550
+        },
+        {
+            "data": "2025-08-21T19:44:01",
+            "contra": "MatadordePassarinho",
+            "resultado": "derrota",
+            "pontos_finais": 600
+        },
+        {
+            "data": "2025-08-26T02:24:58",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 650
+        },
+        {
+            "data": "2025-09-01T14:50:30",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 750
+        },
+        {
+            "data": "2025-09-01T14:51:08",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 850
+        },
+        {
+            "data": "2025-09-03T12:09:48",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 900
+        },
+        {
+            "data": "2025-09-03T12:10:41",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 950
+        },
+        {
+            "data": "2025-09-04T16:31:44",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 1050
+        },
+        {
+            "data": "2025-09-05T21:29:20",
+            "contra": "Sky",
+            "resultado": "derrota",
+            "pontos_finais": 1100
+        },
+        {
+            "data": "2025-09-19T07:21:01",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1150
+        },
+        {
+            "data": "2025-09-21T14:54:12",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        }
+    ],
+    "energy_last_ts": "2025-09-04T21:16:15.416040+00:00",
+    "last_chat_id": 6682982033,
+    "class_key": "samurai",
+    "class_choice_offered": true,
+    "base_stats": {
+        "max_hp": 127,
+        "attack": 28,
+        "defense": 15,
+        "initiative": 16,
+        "luck": 4
+    },
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "user_id": 6682982033,
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

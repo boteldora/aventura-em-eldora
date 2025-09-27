@@ -1,0 +1,58 @@
+{
+    "character_name": "V1C7OR",
+    "class": null,
+    "level": 1,
+    "xp": 0,
+    "max_hp": 50,
+    "current_hp": 50,
+    "attack": 5,
+    "defense": 3,
+    "initiative": 5,
+    "luck": 5,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "energy_last_ts": "2025-09-14T04:15:41.327309+00:00",
+    "gold": 5,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {},
+    "inventory": {
+        "cristal_de_abertura": 44
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "mina_ferro",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "last_chat_id": 1208098945,
+    "class_choice_offered": false,
+    "base_stats": {
+        "max_hp": 50,
+        "attack": 5,
+        "defense": 3,
+        "initiative": 5,
+        "luck": 5
+    },
+    "user_id": 1208098945,
+    "stackables": {
+        "cristal_de_abertura": 15
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

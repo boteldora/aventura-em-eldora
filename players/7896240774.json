@@ -1,0 +1,361 @@
+{
+    "character_name": "TNIGHTMARE",
+    "class": "cacador",
+    "level": 27,
+    "xp": 9278,
+    "max_hp": 204,
+    "current_hp": 208,
+    "attack": 58,
+    "defense": 29,
+    "initiative": 58,
+    "luck": 30,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "party_id": null,
+    "profession": {
+        "type": "ferreiro",
+        "level": 5,
+        "xp": 221
+    },
+    "inventory": {
+        "cristal_de_abertura": 46,
+        "couro_de_lobo_alfa": 211,
+        "pedra_do_aprimoramento": 17,
+        "esporo_de_cogumelo": 132,
+        "ectoplasma": 251,
+        "madeira_rara": 99,
+        "seiva_de_ent": 174,
+        "joia_da_criacao": 62,
+        "cajado_fragil": 16,
+        "carapaca_de_pedra": 32,
+        "pedra": 76,
+        "fragmento_gargula": 19,
+        "poeira_magica": 4,
+        "ferro": 1,
+        "escama_de_salamandra": 15,
+        "olho_de_basilisco": 8,
+        "couro_curtido": 88,
+        "dente_afiado": 19,
+        "presa_de_javali": 46,
+        "rolo_de_pano_simples": 28,
+        "barra_de_ferro": 76,
+        "minerio_de_ferro": 9,
+        "gema_bruta": 5,
+        "essencia_fungica": 11,
+        "pele_de_troll": 13,
+        "sangue_regenerativo": 5,
+        "asa_de_morcego": 7,
+        "essencia_de_fogo": 80,
+        "engrenagem_usada": 141,
+        "martelo_enferrujado": 54,
+        "escama_incandescente": 63,
+        "pena": 19,
+        "ponta_de_osso_afiada": 17,
+        "pano_simples": 7,
+        "nucleo_de_golem": 3,
+        "cf7fdbdd-62ac-4c44-9e00-2eccedd27236": {
+            "uuid": "06146aef-841f-4939-ae20-3813d4aa51d6",
+            "base_id": "luvas_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Luvas de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "f1f19f47-6062-4983-a2bb-5872e2b75684": {
+            "uuid": "296cbfed-0016-4b7b-8bf3-10ebe2f94a5e",
+            "base_id": "elmo_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Elmo de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "dcf4fff2-444a-4425-9d80-a8a1dc6a648d": {
+            "uuid": "a9f40124-5a07-4af2-bee2-b80246c31335",
+            "base_id": "botas_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Botas de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "be7d4d98-864e-45bf-b758-c5eb368d425e": {
+            "uuid": "ad547fd2-364a-407e-b6b0-ff8c8ec661e1",
+            "base_id": "brinco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Brinco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "coracao_de_magma": 4,
+        "essencia_disciplina": 3,
+        "emblema_guerreiro": 1,
+        "emblema_mago": 1,
+        "emblema_berserker": 2,
+        "reliquia_mistica": 2,
+        "emblema_assassino": 3,
+        "essencia_harmonia": 1,
+        "essencia_corte": 1,
+        "essencia_luz": 1,
+        "emblema_samurai": 1,
+        "emblema_bardo": 1,
+        "batuta_maestria": 1,
+        "essencia_letal": 1,
+        "emblema_cacador": 1,
+        "essencia_arcana": 1,
+        "madeira": 1,
+        "e99642b1-1a31-48e9-b4d7-836f0942ff42": {
+            "uuid": "12f38c66-03ca-46fc-9cde-6578fee13689",
+            "base_id": "calcas_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Calças de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "30ce9585-38db-44f6-bc70-dbd835708985": {
+            "uuid": "c1f60894-6bdd-4100-8156-c504b1863b32",
+            "base_id": "arco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                14,
+                20
+            ],
+            "enchantments": {
+                "precisao": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 14,
+                "max": 19,
+                "scales_with": "precisao"
+            },
+            "display_name": "Arco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "palha_amaldicoada": 2
+    },
+    "equipment": {
+        "arma": "30ce9585-38db-44f6-bc70-dbd835708985",
+        "elmo": "f1f19f47-6062-4983-a2bb-5872e2b75684",
+        "armadura": null,
+        "calca": "e99642b1-1a31-48e9-b4d7-836f0942ff42",
+        "luvas": "cf7fdbdd-62ac-4c44-9e00-2eccedd27236",
+        "botas": "dcf4fff2-444a-4425-9d80-a8a1dc6a648d",
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "campos_linho",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "gold": 72200,
+    "pvp_points": 2650,
+    "pvp_history": [
+        {
+            "data": "2025-08-31T13:57:31",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1250
+        },
+        {
+            "data": "2025-08-31T13:57:55",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1350
+        },
+        {
+            "data": "2025-08-31T13:58:27",
+            "contra": "Bastos ADM",
+            "resultado": "vitoria",
+            "pontos_finais": 1450
+        },
+        {
+            "data": "2025-09-01T14:51:22",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1550
+        },
+        {
+            "data": "2025-09-05T21:26:53",
+            "contra": "Sky",
+            "resultado": "vitoria",
+            "pontos_finais": 1650
+        },
+        {
+            "data": "2025-09-05T21:29:41",
+            "contra": "Sky",
+            "resultado": "vitoria",
+            "pontos_finais": 1750
+        },
+        {
+            "data": "2025-09-19T07:21:12",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1800
+        },
+        {
+            "data": "2025-09-19T07:21:34",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1850
+        },
+        {
+            "data": "2025-09-20T20:22:57",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-20T22:24:46",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:48:53",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:49:13",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:49:28",
+            "contra": "Murdock",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:49:40",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:45",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:18:40",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:20:01",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:20:34",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:20:46",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:21:07",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        }
+    ],
+    "energy_last_ts": "2025-09-25T15:53:33.253281+00:00",
+    "last_chat_id": 7896240774,
+    "invested": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "initiative": 0,
+        "luck": 0
+    },
+    "base_stats": {
+        "max_hp": 204,
+        "attack": 58,
+        "defense": 3,
+        "initiative": 58,
+        "luck": 30
+    },
+    "user_id": 7896240774,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

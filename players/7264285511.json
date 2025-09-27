@@ -1,0 +1,84 @@
+{
+    "character_name": "Saitama",
+    "class": "Caçador",
+    "level": 14,
+    "xp": 0,
+    "max_hp": 141,
+    "current_hp": 49,
+    "attack": 32,
+    "defense": 16,
+    "initiative": 32,
+    "luck": 17,
+    "stat_points": 0,
+    "energy": 35,
+    "max_energy": 20,
+    "energy_last_ts": "2025-09-27T16:33:44.355670+00:00",
+    "gold": 0,
+    "gems": 0,
+    "premium_tier": "lenda",
+    "premium_expires_at": "2025-10-07T15:35:19.766476+00:00",
+    "party_id": null,
+    "profession": {
+        "type": "alfaiate",
+        "level": 1,
+        "xp": 0
+    },
+    "inventory": {},
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "floresta_sombria",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "in_combat",
+        "started_at": "2025-09-27T16:33:39.632372+00:00",
+        "details": {
+            "id": "lobo_magro",
+            "monster_name": "Lobo Magro (🅴🅻🅸🆃🅴) 👑",
+            "monster_hp": 21,
+            "monster_max_hp": 50,
+            "monster_attack": 6,
+            "monster_defense": 3,
+            "monster_initiative": 9,
+            "monster_luck": 8,
+            "monster_gold_drop": 2,
+            "monster_xp_reward": 10,
+            "loot_table": [
+                {
+                    "item_id": "couro_de_lobo",
+                    "drop_chance": 70.0
+                }
+            ],
+            "battle_log": [
+                "➡️ Saitama 𝒂𝒕𝒂𝒄𝒂!",
+                "💥 𝑽𝒐𝒄𝒆̂ 𝒄𝒂𝒖𝒔𝒂 29 𝒅𝒆 𝒅𝒂𝒏𝒐.",
+                "⬅️ Lobo Magro (🅴🅻🅸🆃🅴) 👑 𝒂𝒕𝒂𝒄𝒂!",
+                "🩸 𝑽𝒐𝒄𝒆̂ 𝒓𝒆𝒄𝒆𝒃𝒆 1 𝒅𝒆 𝒅𝒂𝒏𝒐."
+            ],
+            "media_hint": "lobo_magro_media",
+            "is_elite": true,
+            "region_key": "floresta_sombria",
+            "used_weapon": true,
+            "took_damage": true
+        }
+    },
+    "last_chat_id": 7264285511,
+    "class_choice_offered": true,
+    "base_stats": {
+        "max_hp": 126,
+        "attack": 32,
+        "defense": 3,
+        "initiative": 32,
+        "luck": 17
+    },
+    "user_id": 7264285511,
+    "class_key": "cacador"
+}

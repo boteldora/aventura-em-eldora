@@ -1,0 +1,682 @@
+{
+    "character_name": "Jorge Alfredo",
+    "class": "Berserker",
+    "level": 25,
+    "xp": 2677,
+    "max_hp": 271,
+    "current_hp": 277,
+    "attack": 97,
+    "defense": 4,
+    "initiative": 29,
+    "luck": 4,
+    "stat_points": 0,
+    "energy": 20,
+    "max_energy": 20,
+    "party_id": null,
+    "profession": {
+        "type": "curtidor",
+        "level": 6,
+        "xp": 328
+    },
+    "inventory": {
+        "cristal_de_abertura": 8,
+        "ectoplasma": 79,
+        "esporo_de_cogumelo": 8,
+        "madeira_rara": 16,
+        "seiva_de_ent": 70,
+        "joia_da_criacao": 32,
+        "couro_de_lobo_alfa": 32,
+        "essencia_de_fogo": 0,
+        "fio_de_prata": 2,
+        "madeira": 3,
+        "b5dd5480-706e-4b90-811f-3be237c7b129": {
+            "uuid": "3d1af096-8ce2-4c33-be18-939fbbf347da",
+            "base_id": "brinco_osso_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Brinco de Osso do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "1519e28c-95c4-4734-8755-bd4342cdf284": {
+            "uuid": "f042c28d-fa71-4e9e-bfd4-d5d74a460315",
+            "base_id": "anel_osso_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel de Osso do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "76564774-ab76-4536-a159-3d60d2561697": {
+            "uuid": "7843169b-f721-42b8-9ebd-4ccbbab29458",
+            "base_id": "colar_presas_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Colar de Presas do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "b78ef85d-455c-4d50-b2d4-e862605be789": {
+            "uuid": "024dc1fa-b4d3-4588-9bb2-7f999117535c",
+            "base_id": "machado_rustico_berserker",
+            "rarity": "bom",
+            "upgrade_level": 8,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "furia": {
+                    "value": 8,
+                    "source": "primary"
+                },
+                "defense": {
+                    "value": 8,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 8,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 10,
+                "max": 22,
+                "scales_with": "furia"
+            },
+            "display_name": "Machado Rústico do Berserker",
+            "class_req": [
+                "berserker"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "dente_afiado": 5,
+        "barra_de_ferro": 18,
+        "rolo_de_pano_simples": 24,
+        "essencia_luz": 3,
+        "essencia_precisao": 3,
+        "essencia_disciplina": 4,
+        "grimorio_arcano": 4,
+        "essencia_arcana": 8,
+        "selo_sagrado": 7,
+        "emblema_monge": 5,
+        "essencia_sombra": 5,
+        "essencia_fera": 5,
+        "essencia_encanto": 6,
+        "essencia_corte": 5,
+        "lamina_sagrada": 8,
+        "essencia_furia": 5,
+        "reliquia_mistica": 6,
+        "essencia_ki": 3,
+        "emblema_assassino": 4,
+        "essencia_guardia": 4,
+        "emblema_berserker": 4,
+        "emblema_bardo": 5,
+        "essencia_elemental": 4,
+        "emblema_cacador": 7,
+        "manto_eterno": 5,
+        "emblema_guerreiro": 5,
+        "essencia_harmonia": 4,
+        "marca_predador": 4,
+        "essencia_letal": 3,
+        "batuta_maestria": 3,
+        "totem_ancestral": 2,
+        "emblema_samurai": 1,
+        "emblema_mago": 1,
+        "palha_amaldicoada": 62,
+        "linho": 51,
+        "pedra": 12,
+        "nucleo_de_golem": 1,
+        "pedra_do_aprimoramento": 9,
+        "ferro": 1,
+        "gema_bruta": 4,
+        "9cfd677a-0a93-47a9-9305-fb5bd3467d1d": {
+            "uuid": "40e456d7-6d10-4be2-80a9-3d566ff8d23b",
+            "base_id": "arco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "precisao": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 14,
+                "max": 19,
+                "scales_with": "precisao"
+            },
+            "display_name": "Arco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "f8bd16e8-9f73-4dec-94da-52d90e00ca74": {
+            "uuid": "2c9f6eb8-dbb0-4565-85ec-921efcdab77b",
+            "base_id": "brinco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Brinco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "d21ea3e9-cb68-41bb-b7e8-b2e7c80702d1": {
+            "uuid": "bd81d818-6a9d-40bd-a05d-b97036a89d33",
+            "base_id": "anel_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "ponta_de_osso_afiada": 7,
+        "fragmento_gargula": 4,
+        "coracao_de_magma": 1,
+        "carapaca_de_pedra": 2,
+        "3be927f7-4abe-4f3b-94a7-8c243aeda4cd": {
+            "uuid": "143c0bed-81a0-40a6-b75d-e401b403b901",
+            "base_id": "luvas_couro_berserker",
+            "rarity": "raro",
+            "upgrade_level": 3,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 3,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 3,
+                    "source": "affix"
+                },
+                "defense": {
+                    "value": 3,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Luvas de Couro do Berserker",
+            "class_req": [
+                "berserker"
+            ],
+            "enh_failstacks": 0.0
+        },
+        "de597d5c-6b46-4f13-a495-7e305b616f0a": {
+            "uuid": "e09da837-995c-4a45-9956-f5298da4492b",
+            "base_id": "botas_batedor_cacador",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 1,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Botas de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "5a1c9eed-0d3f-4924-aede-9ad54e042abe": {
+            "uuid": "3d733ccc-a055-4d43-a45f-39e34895b6ca",
+            "base_id": "colar_presas_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Colar de Presas do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "pano_simples": 20,
+        "joia_da_forja": 4,
+        "pena": 3,
+        "couro_curtido": 2,
+        "1d496938-ff70-483e-a6a5-c7c1cdfd4cbd": {
+            "uuid": "9e7f081d-faf8-406c-8f5e-407bfd69f2f2",
+            "base_id": "botas_couro_berserker",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "luck": {
+                    "value": 1,
+                    "source": "affix"
+                }
+            },
+            "display_name": "Botas de Couro do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "pergaminho_durabilidade": 2,
+        "2f27a324-64af-4c4b-a327-3d6f732944c3": {
+            "uuid": "ba6d22cc-b52a-472f-9265-c291ebc64591",
+            "base_id": "botas_couro_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Botas de Couro do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "nucleo_forja_fraco": 1,
+        "couro_de_lobo": 4
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": "3be927f7-4abe-4f3b-94a7-8c243aeda4cd",
+        "botas": "1d496938-ff70-483e-a6a5-c7c1cdfd4cbd",
+        "anel": "1519e28c-95c4-4734-8755-bd4342cdf284",
+        "colar": null,
+        "brinco": "b5dd5480-706e-4b90-811f-3be237c7b129"
+    },
+    "current_location": "campos_linho",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "gold": 18719,
+    "pvp_points": 4250,
+    "pvp_history": [
+        {
+            "data": "2025-08-16T09:02:48",
+            "contra": "Caerleon",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        },
+        {
+            "data": "2025-09-19T07:19:18",
+            "contra": "Malvadeza",
+            "resultado": "vitoria",
+            "pontos_finais": 150
+        },
+        {
+            "data": "2025-09-19T07:19:27",
+            "contra": "Zyuron",
+            "resultado": "vitoria",
+            "pontos_finais": 250
+        },
+        {
+            "data": "2025-09-19T07:19:34",
+            "contra": "👑",
+            "resultado": "vitoria",
+            "pontos_finais": 350
+        },
+        {
+            "data": "2025-09-19T07:19:42",
+            "contra": "Gaia Antlia",
+            "resultado": "vitoria",
+            "pontos_finais": 450
+        },
+        {
+            "data": "2025-09-19T07:19:52",
+            "contra": "Elendihl",
+            "resultado": "vitoria",
+            "pontos_finais": 550
+        },
+        {
+            "data": "2025-09-19T07:20:02",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 650
+        },
+        {
+            "data": "2025-09-19T07:20:15",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 750
+        },
+        {
+            "data": "2025-09-19T07:20:23",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 850
+        },
+        {
+            "data": "2025-09-19T07:20:31",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 950
+        },
+        {
+            "data": "2025-09-19T07:20:39",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 1050
+        },
+        {
+            "data": "2025-09-19T07:20:53",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1150
+        },
+        {
+            "data": "2025-09-19T07:21:01",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 1250
+        },
+        {
+            "data": "2025-09-19T07:21:12",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria",
+            "pontos_finais": 1350
+        },
+        {
+            "data": "2025-09-19T07:21:23",
+            "contra": "Sky",
+            "resultado": "vitoria",
+            "pontos_finais": 1450
+        },
+        {
+            "data": "2025-09-19T07:21:34",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria",
+            "pontos_finais": 1550
+        },
+        {
+            "data": "2025-09-19T07:21:44",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 1650
+        },
+        {
+            "data": "2025-09-20T20:22:42",
+            "contra": "Chaos",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-20T20:22:57",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-20T20:23:09",
+            "contra": "Sky",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:12",
+            "contra": "Muordecay",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:28",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:37",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:45",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:54:53",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:55:03",
+            "contra": "Sky",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:55:11",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T14:55:20",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:18:40",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:18:50",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:18:59",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:19:08",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:19:19",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:19:35",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:19:49",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:20:01",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:20:14",
+            "contra": "Sky",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:20:22",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:20:34",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:20:46",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:21:07",
+            "contra": "TNIGHTMARE",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T17:21:25",
+            "contra": "Bastos ADM",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:22:30",
+            "contra": "Bastos ADM",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:38:28",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        }
+    ],
+    "energy_last_ts": "2025-09-27T16:42:17.728950+00:00",
+    "last_chat_id": 1160420540,
+    "base_stats": {
+        "max_hp": 271,
+        "attack": 54,
+        "defense": 3,
+        "initiative": 29,
+        "luck": 3
+    },
+    "class_key": "berserker",
+    "class_choice_offered": true,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "user_id": 1160420540,
+    "missions": {
+        "daily_rerolls_left": 2,
+        "last_refresh_date": "2025-09-26",
+        "active_missions": [
+            {
+                "mission_id": "hunt_xama_goblin",
+                "progress": 4,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_lobo_magro",
+                "progress": 1,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "pvp_win_3",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_salamandra_de_pedra",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_gnomo_de_jardim_travesso",
+                "progress": 3,
+                "is_complete": true,
+                "is_claimed": false
+            }
+        ]
+    },
+    "clan_id": "draconicos",
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

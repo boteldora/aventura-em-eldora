@@ -1,0 +1,544 @@
+{
+    "character_name": "🥷",
+    "class": "Berserker",
+    "level": 10,
+    "xp": 312,
+    "max_hp": 136,
+    "current_hp": 50,
+    "attack": 24,
+    "defense": 3,
+    "initiative": 14,
+    "luck": 3,
+    "stat_points": 9,
+    "energy": 20,
+    "max_energy": 20,
+    "energy_last_ts": "2025-09-04T21:16:15.406047+00:00",
+    "gold": 158,
+    "premium_tier": null,
+    "premium_expires_at": null,
+    "party_id": null,
+    "profession": {},
+    "inventory": {
+        "cristal_de_abertura": 52,
+        "esporo_de_cogumelo": 1,
+        "madeira_rara": 2,
+        "seiva_de_ent": 1,
+        "ectoplasma": 2,
+        "carapaca_de_pedra": 1,
+        "pedra": 2,
+        "fragmento_gargula": 3,
+        "pedra_do_aprimoramento": 1,
+        "d9523e03-2cb4-4ee1-b0c9-77e08881a09b": {
+            "uuid": "361d6bbd-40aa-47ca-9f1d-965128780b3b",
+            "base_id": "katana_laminada_samurai",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 15,
+                "max": 20,
+                "scales_with": "bushido"
+            },
+            "display_name": "Katana Laminada",
+            "class_req": [
+                "samurai"
+            ]
+        },
+        "f43c5b23-e00c-4d99-ae01-f3c157d9551b": {
+            "uuid": "08c49a2c-84cb-4826-a297-5c5fd17ab947",
+            "base_id": "espada_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 0,
+            "durability": [
+                100,
+                100
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 4,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Espada Ferro Guerreiro"
+        },
+        "1b0964ff-ad41-4aea-94cc-00bd6fc17fa1": {
+            "uuid": "cae71c5b-0e58-4ff0-868f-1a3dc1e414a8",
+            "base_id": "katana_laminada_samurai",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 20,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 20,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 15,
+                "max": 20,
+                "scales_with": "for"
+            },
+            "display_name": "Katana Laminada Samurai",
+            "class_req": [
+                "samurai"
+            ]
+        },
+        "ba64b050-5c7b-4048-9422-04c04c49e04c": {
+            "uuid": "a89cb8ab-6d6e-4494-b51e-e65c1399399d",
+            "base_id": "katana_laminada_samurai",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 15,
+                "max": 20,
+                "scales_with": "for"
+            },
+            "display_name": "Katana Laminada",
+            "class_req": [
+                "samurai"
+            ]
+        },
+        "b7972724-15ee-4d5b-bc4d-54505aefdf7d": {
+            "uuid": "31ecdecb-1ebc-4889-b77b-ce2df9bdee99",
+            "base_id": "katana_laminada_samurai",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "bushido": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 15,
+                "max": 20,
+                "scales_with": "for"
+            },
+            "display_name": "Katana Laminada",
+            "class_req": [
+                "samurai"
+            ]
+        },
+        "0d5007e6-b86f-4e87-8690-6724064108be": {
+            "uuid": "1360e7e9-92f2-4810-aef8-eba837be98e1",
+            "base_id": "cajado_aprendiz_mago",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "initiative": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "arcano",
+                "min": 15,
+                "max": 20,
+                "scales_with": "for"
+            },
+            "display_name": "Cajado de Aprendiz",
+            "class_req": [
+                "mago"
+            ]
+        },
+        "6f172212-c161-4c7c-b9aa-0bda1f31863e": {
+            "uuid": "b589cc6d-a949-41c6-9e14-7a0845953a3a",
+            "base_id": "arco_batedor_cacador",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 14,
+                "max": 19,
+                "scales_with": "for"
+            },
+            "display_name": "Arco de Batedor",
+            "class_req": [
+                "cacador"
+            ]
+        },
+        "31036729-b5ee-48b5-a0cc-83aa91870e4a": {
+            "uuid": "e87c1733-63a0-4418-aee2-e844658076f2",
+            "base_id": "machado_rustico_berserker",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dano_corte": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 10,
+                "max": 22,
+                "scales_with": "for"
+            },
+            "display_name": "Machado Rústico do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "4dbe5aeb-733b-466f-968c-f469e5ac5946": {
+            "uuid": "14227d53-e4a4-4682-badf-b7b07654f47c",
+            "base_id": "adaga_sorrateira_assassino",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 16,
+                "max": 18,
+                "scales_with": "for"
+            },
+            "display_name": "Adaga Sorrateira",
+            "class_req": [
+                "assassino"
+            ]
+        },
+        "e87ae975-89a4-420a-af8c-2883270c1a35": {
+            "uuid": "c1dc0281-964e-41f7-b152-1a9661026476",
+            "base_id": "adaga_sorrateira_assassino",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 16,
+                "max": 18,
+                "scales_with": "bushido"
+            },
+            "display_name": "Adaga Sorrateira",
+            "class_req": [
+                "assassino"
+            ]
+        },
+        "cc782f60-e761-41cf-a30e-1d994937377f": {
+            "uuid": "2c00d819-7679-4d74-b403-2e2e1929d300",
+            "base_id": "katana_laminada_samurai",
+            "rarity": "comum",
+            "upgrade_level": 0,
+            "durability": [
+                100,
+                100
+            ],
+            "enchantments": {
+                "dmg": {
+                    "value": 4,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Katana Laminada Samurai"
+        },
+        "6e185ca1-8527-41d5-9801-584650fd5e65": {
+            "uuid": "4de4ddd1-c5a4-43b9-a8c4-d14d4c96abad",
+            "base_id": "alaude_simples_bardo",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "carisma": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "sonico",
+                "min": 10,
+                "max": 15,
+                "scales_with": "bushido"
+            },
+            "display_name": "Alaúde Simples do Bardo",
+            "class_req": [
+                "bardo"
+            ]
+        },
+        "542a8cc0-d826-4034-a097-6b6f2337a1a1": {
+            "uuid": "d2664d16-a8af-4955-9df6-8deb692a3611",
+            "base_id": "cajado_aprendiz_mago",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "inteligencia": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "arcano",
+                "min": 15,
+                "max": 20,
+                "scales_with": "inteligencia"
+            },
+            "display_name": "Cajado de Aprendiz",
+            "class_req": [
+                "mago"
+            ]
+        },
+        "c1fbe791-00d9-4963-b82c-08b85618df92": {
+            "uuid": "09e2e954-4f49-4631-9e04-53c2e10c904a",
+            "base_id": "espada_ferro_guerreiro",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "dmg": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 12,
+                "max": 18,
+                "scales_with": "forca"
+            },
+            "display_name": "Espada de Ferro do Guerreiro",
+            "class_req": [
+                "guerreiro"
+            ]
+        },
+        "7221712b-fd51-4d5c-b4b6-bd8195e06755": {
+            "uuid": "b32c48ea-e1eb-4435-8f52-eb7d73309c08",
+            "base_id": "machado_rustico_berserker",
+            "rarity": "bom",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "furia": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "luck": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "cortante",
+                "min": 10,
+                "max": 22,
+                "scales_with": "furia"
+            },
+            "display_name": "Machado Rústico do Berserker",
+            "class_req": [
+                "berserker"
+            ]
+        },
+        "c7c2d700-732a-4e76-b708-c6f78d7c6025": {
+            "uuid": "955c59ba-80da-400d-88c8-da57c78ed642",
+            "base_id": "manoplas_iniciado_monge",
+            "rarity": "raro",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "bushido": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "luck": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "initiative": {
+                    "value": 1,
+                    "source": "affix"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "esmagamento",
+                "min": 13,
+                "max": 17,
+                "scales_with": "bushido"
+            },
+            "display_name": "Manoplas de Iniciado",
+            "class_req": [
+                "monge"
+            ]
+        },
+        "pedreira_granito": 3,
+        "asa_de_morcego": 12,
+        "presa_de_javali": 1,
+        "barra_de_Ferro": 300
+    },
+    "equipment": {
+        "arma": "7221712b-fd51-4d5c-b4b6-bd8195e06755",
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": null,
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "reino_eldora",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "idle"
+    },
+    "last_chat_id": 6149034130,
+    "class_choice_offered": true,
+    "base_stats": {
+        "max_hp": 136,
+        "attack": 24,
+        "defense": 3,
+        "initiative": 14,
+        "luck": 3
+    },
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "user_id": 6149034130,
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}

@@ -1,0 +1,376 @@
+{
+    "character_name": "Sky",
+    "class": "Assassino",
+    "level": 21,
+    "xp": 1301,
+    "max_hp": 147,
+    "current_hp": 147,
+    "attack": 50,
+    "defense": 19,
+    "initiative": 67,
+    "luck": 26,
+    "stat_points": 0,
+    "energy": 25,
+    "max_energy": 20,
+    "gold": 48168,
+    "premium_tier": "premium",
+    "premium_expires_at": "2025-09-29T10:57:16.931696+00:00",
+    "party_id": null,
+    "profession": {
+        "type": "minerador",
+        "level": 5,
+        "xp": 19
+    },
+    "inventory": {
+        "cristal_de_abertura": 47,
+        "pano_simples": 27,
+        "couro_de_lobo": 23,
+        "presa_de_javali": 13,
+        "esporo_de_cogumelo": 26,
+        "ectoplasma": 20,
+        "madeira_rara": 8,
+        "joia_da_criacao": 9,
+        "seiva_de_ent": 8,
+        "pedra": 61,
+        "ferro": 254,
+        "fragmento_gargula": 12,
+        "escama_de_salamandra": 9,
+        "poeira_magica": 3,
+        "nucleo_de_golem": 3,
+        "minerio_de_ferro": 10,
+        "carapaca_de_pedra": 11,
+        "coracao_de_magma": 2,
+        "gema_bruta": 5,
+        "pedra_do_aprimoramento": 6,
+        "palha_amaldicoada": 4,
+        "linho": 6,
+        "pena": 19,
+        "essencia_de_fogo": 34,
+        "martelo_enferrujado": 16,
+        "asa_de_morcego": 3,
+        "barra_bronze": 1,
+        "b0070d4e-3f0a-49cd-b20a-d3d282f59333": {
+            "uuid": "7afaa9ae-74a2-45e7-ac02-424bfc69c030",
+            "base_id": "anel_sorrateiro_assassino",
+            "rarity": "comum",
+            "upgrade_level": 0,
+            "durability": [
+                100,
+                100
+            ],
+            "enchantments": {
+                "dmg": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel Sorrateiro Assassino"
+        },
+        "barra_de_ferro": 41,
+        "escama_incandescente": 31,
+        "engrenagem_usada": 57,
+        "c9575c63-9f88-42b3-bf87-8b315fe939bd": {
+            "uuid": "59a7f728-f37c-412c-9812-29fb1fb581e0",
+            "base_id": "anel_sorrateiro_assassino",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                20,
+                20
+            ],
+            "enchantments": {
+                "hp": {
+                    "value": 1,
+                    "source": "primary"
+                }
+            },
+            "display_name": "Anel Sorrateiro",
+            "class_req": [
+                "assassino"
+            ]
+        },
+        "c9699de4-05e9-4b13-86fe-ee52026f8e80": {
+            "uuid": "8eb2b3e6-659f-43e0-a8c0-f58fc7ae8db4",
+            "base_id": "adaga_sorrateira_assassino",
+            "rarity": "comum",
+            "upgrade_level": 1,
+            "durability": [
+                0,
+                20
+            ],
+            "enchantments": {
+                "letalidade": {
+                    "value": 1,
+                    "source": "primary"
+                },
+                "dmg": {
+                    "value": 1,
+                    "source": "primary_mirror"
+                }
+            },
+            "damage": {
+                "type": "perfurante",
+                "min": 16,
+                "max": 18,
+                "scales_with": "letalidade"
+            },
+            "display_name": "Adaga Sorrateira",
+            "class_req": [
+                "assassino"
+            ]
+        },
+        "madeira": 1,
+        "couro_de_lobo_alfa": 1,
+        "emblema_cacador": 1,
+        "essencia_harmonia": 1
+    },
+    "equipment": {
+        "arma": null,
+        "elmo": null,
+        "armadura": null,
+        "calca": null,
+        "luvas": null,
+        "botas": null,
+        "anel": "b0070d4e-3f0a-49cd-b20a-d3d282f59333",
+        "colar": null,
+        "brinco": null
+    },
+    "current_location": "pantano_maldito",
+    "last_travel_time": null,
+    "player_state": {
+        "action": "in_combat",
+        "started_at": "2025-09-21T16:48:06.564810+00:00",
+        "details": {
+            "id": "generic_pantano_maldito",
+            "monster_name": "Criatura da Região",
+            "monster_hp": 125,
+            "monster_max_hp": 125,
+            "monster_attack": 13,
+            "monster_defense": 9,
+            "monster_initiative": 9,
+            "monster_luck": 6,
+            "monster_gold_drop": 46,
+            "monster_xp_reward": 50,
+            "loot_table": [],
+            "battle_log": [],
+            "media_hint": "generic_pantano_maldito",
+            "is_elite": false,
+            "region_key": "pantano_maldito"
+        }
+    },
+    "last_chat_id": 6444735164,
+    "pvp_points": 2250,
+    "pvp_history": [
+        {
+            "data": "2025-08-17T10:12:55",
+            "contra": "Muordecay",
+            "resultado": "derrota",
+            "pontos_finais": 50
+        },
+        {
+            "data": "2025-08-31T23:05:36",
+            "contra": "Cannon",
+            "resultado": "vitoria",
+            "pontos_finais": 150
+        },
+        {
+            "data": "2025-08-31T23:05:49",
+            "contra": "Will",
+            "resultado": "vitoria",
+            "pontos_finais": 250
+        },
+        {
+            "data": "2025-08-31T23:06:00",
+            "contra": "TheWar",
+            "resultado": "vitoria",
+            "pontos_finais": 350
+        },
+        {
+            "data": "2025-08-31T23:06:28",
+            "contra": "Malvadeza",
+            "resultado": "vitoria",
+            "pontos_finais": 450
+        },
+        {
+            "data": "2025-08-31T23:06:52",
+            "contra": "Grigor Kulenov",
+            "resultado": "vitoria",
+            "pontos_finais": 550
+        },
+        {
+            "data": "2025-08-31T23:07:13",
+            "contra": "Chaos",
+            "resultado": "derrota",
+            "pontos_finais": 600
+        },
+        {
+            "data": "2025-09-03T12:09:16",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 700
+        },
+        {
+            "data": "2025-09-03T12:09:48",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 800
+        },
+        {
+            "data": "2025-09-03T12:10:41",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 900
+        },
+        {
+            "data": "2025-09-03T12:11:21",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 1000
+        },
+        {
+            "data": "2025-09-05T21:26:36",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1100
+        },
+        {
+            "data": "2025-09-05T21:26:53",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota",
+            "pontos_finais": 1150
+        },
+        {
+            "data": "2025-09-05T21:27:27",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1250
+        },
+        {
+            "data": "2025-09-05T21:27:55",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1350
+        },
+        {
+            "data": "2025-09-05T21:28:43",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1450
+        },
+        {
+            "data": "2025-09-05T21:29:04",
+            "contra": "MatadordePassarinho",
+            "resultado": "vitoria",
+            "pontos_finais": 1550
+        },
+        {
+            "data": "2025-09-05T21:29:20",
+            "contra": "Muordecay",
+            "resultado": "vitoria",
+            "pontos_finais": 1650
+        },
+        {
+            "data": "2025-09-05T21:29:41",
+            "contra": "TNIGHTMARE",
+            "resultado": "derrota",
+            "pontos_finais": 1700
+        },
+        {
+            "data": "2025-09-05T21:30:18",
+            "contra": "Chaos",
+            "resultado": "vitoria",
+            "pontos_finais": 1800
+        },
+        {
+            "data": "2025-09-19T07:21:23",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota",
+            "pontos_finais": 1850
+        },
+        {
+            "data": "2025-09-20T20:23:09",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T13:28:03",
+            "contra": "Chaos",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T13:28:18",
+            "contra": "Murdock",
+            "resultado": "vitoria"
+        },
+        {
+            "data": "2025-09-21T13:28:41",
+            "contra": "Murdock",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T14:55:03",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        },
+        {
+            "data": "2025-09-21T17:20:14",
+            "contra": "Jorge Alfredo",
+            "resultado": "derrota"
+        }
+    ],
+    "energy_last_ts": "2025-09-21T16:52:04.598987+00:00",
+    "base_stats": {
+        "max_hp": 147,
+        "attack": 46,
+        "defense": 2,
+        "initiative": 67,
+        "luck": 25
+    },
+    "class_key": "assassino",
+    "class_choice_offered": true,
+    "user_id": 6444735164,
+    "stackables": {
+        "cristal_de_abertura": 24
+    },
+    "daily_awards": {
+        "last_crystal_date": "2025-09-27"
+    },
+    "missions": {
+        "daily_rerolls_left": 2,
+        "last_refresh_date": "2025-09-21",
+        "active_missions": [
+            {
+                "mission_id": "hunt_lobisomem_campones",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "enhance_success_3",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_tatu_de_rocha",
+                "progress": 0,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_specific_swamp",
+                "progress": 3,
+                "is_complete": false,
+                "is_claimed": false
+            },
+            {
+                "mission_id": "hunt_generic_forest",
+                "progress": 5,
+                "is_complete": true,
+                "is_claimed": false
+            }
+        ]
+    },
+    "pvp_entries_left": 10,
+    "last_pvp_entry_reset": "2025-09-27"
+}
